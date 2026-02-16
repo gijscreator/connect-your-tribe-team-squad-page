@@ -137,3 +137,19 @@ a.link {
         border: #946F18 2px solid;
     }
 }
+
+button.stoel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 6rem; 
+    height: 7rem;
+    border-radius: 3rem 3rem 0 0; 
+    border: none;
+    background-color: #63120d; 
+    color: white;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
+
+    cursor: pointer;
+}

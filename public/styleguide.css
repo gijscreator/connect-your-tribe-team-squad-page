@@ -87,9 +87,10 @@ a.link {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
     width: 100%;
     height: 2rem;
-    max-width: 400px;
+    max-width: 600px;
     min-width: 100px;
 
     &.lightlink {

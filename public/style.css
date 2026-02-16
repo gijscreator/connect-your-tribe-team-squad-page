@@ -483,6 +483,13 @@ section.individual {
     }
 }
 
+footer {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-cinema);
+    position: sticky;
+    bottom: 0;
+}
 
 /* winter snow */
 

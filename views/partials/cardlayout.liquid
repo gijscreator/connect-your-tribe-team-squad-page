@@ -9,13 +9,23 @@
                 <!-- Individual student card --> 
                 <li>
                     <img src="https://fdnd.directus.app/assets/{{ person.mugshot }}"  width="400" height="300" alt="">
-                    <p style="border-radius: {{ person.fav_border_radius | default: 0 }}px;"> Fav border radius</p>
-                    
+                    <p class="border" style="--border-radius: {{ person.fav_border_radius | default: 0 }}px;"> Fav border radius</p>
 
+                    <div class="badges">
+                        {% if age %}
+                            <p class="age">{{ age }}</p>
+                        {% endif %}
+                        {% if person.residency %}
+                            <p>{{ person.residency }}</p>
+                            {% endif %}
+                        {% if person.fav_property %}
+                            <p>{{ person.fav_property | strip_html }}</p>
+                        {% endif %}
+                    </div>
                     <article>
                         <h3>{{ person.name | strip_html }}</h3>
                         <!-- linkje met alleen de voornaam -->
-                        <a class="link lightlink" href="/student/{{ person.id }}">Meer over {{ person.name | split: " " | first}}</a>
+                        <a class="link beige" href="/student/{{ person.id }}">Meer over {{ person.name | split: " " | first}}</a>
                     </article>
                 </li>
             {% endif %}

@@ -18,6 +18,7 @@
     list-style: none;
     margin: 0px;
     padding: 0px;
+    overflow-x: hidden;
     margin-block-start: 0px;
     margin-block-end: 0px;
     margin-inline-start: 0px;
@@ -106,17 +107,20 @@ img, video {
 a.link {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-decoration: none;
-    width: 100%;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    width: 80%;
     height: 2rem;
     max-width: 600px;
     min-width: 100px;
+    border-radius: var(--border-small);
 
     &.beige {
         background-color: var(--button-bg-biege);
         color: var(--button-text);
-        border: var(--button-bg-brown) 2px solid;
     }
 
     &.red {

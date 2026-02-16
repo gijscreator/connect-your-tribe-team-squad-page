@@ -19,13 +19,21 @@ header {
 
     section {
         display: flex;
+        align-items: center;
         justify-content: space-between;
         width: 100vw;
 
         a {
             display: flex;
+            align-items: center;
             flex-direction: column;
+            color: white;
+            text-decoration: none;
             width: 15vw;
+
+            svg {
+                width: 2.5rem;
+            }
 
             img {
                 width: 15vw;
@@ -44,10 +52,9 @@ header {
         display: flex;
         align-items: center;
         width: 80%;
-        margin-top: 1rem;
 
         @media (min-width: 700px) {
-
+            position: static;
         }
 
         label {
@@ -339,13 +346,30 @@ aside.cart {
     background-color: purple;
 }
 
+div.badges {
+    display: flex;
+    justify-content: space-around;
+    margin-top: var(--reg-margin);
+
+    p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--border-medium);
+        color: var(--primary-cinema);
+        background-color: var(--white);
+        padding: .3rem .5rem;
+        min-width: 3rem;
+    }
+}
+
 /* badges for all pages */
 div.curtains {
-    overflow: hidden;
+    
     img {
         width: 50vw;
         height: 120dvh;
-        position: absolute;
+        position: fixed;
         top: 0;
         z-index: 100;
         
@@ -405,7 +429,7 @@ section.cardlayout {
         border: 2px var(--white) solid;
         background-color: var(--primary-cinema);
         border-radius: var(--border-medium);
-        margin-bottom: 1rem;
+        margin-bottom: 1rem; position: relative;
 
         @media (min-width: 550px) {
 
@@ -413,12 +437,21 @@ section.cardlayout {
         }
 
         h3 {
-            margin: .5rem .5rem;
+            margin: 1rem;
             font-size: 1.3rem;
         }
 
         img {
             border-radius: var(--border-medium) var(--border-medium) 0 0;
+        }
+
+        p.border {
+            border-radius: var(--border-radius);
+            padding: .5rem;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: var(--primary-cinema);
         }
 
         a.lightlink {
@@ -485,10 +518,26 @@ section.individual {
 
 footer {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     background-color: var(--primary-cinema);
-    position: sticky;
+    width: 100%;
+    position: fixed;
+    padding: 1rem .5rem;
     bottom: 0;
+    left: 0;
+
+    section {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 90%;
+    }
+
+    a {
+        width: 90%;
+        color: var(--white);
+    }
 }
 
 /* winter snow */

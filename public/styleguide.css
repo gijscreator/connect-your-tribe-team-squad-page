@@ -1,3 +1,19 @@
+
+@font-face {
+    font-family: Vesper-reg ;
+    src: url(/assets/regularfont.ttf);
+}
+
+@font-face {
+    font-family: Vesper-med ;
+    src: url(/assets/mediumfont.ttf);
+}
+
+@font-face {
+    font-family: Vesper-bold ;
+    src: url(/assets/boldfont.ttf);
+}
+    
 * {
     list-style: none;
     margin: 0px;
@@ -6,7 +22,6 @@
     margin-block-end: 0px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-	font-family: sans-serif;
     box-sizing: border-box;
 }
 
@@ -58,23 +73,23 @@ body {
 }
 
 h1, h2 {
-	font-weight: 700;
+	font-family: Vesper-bold;
 	font-size: var(--heading-big);
 }
 
 h3, h4 {
-	font-weight: 700;
+	font-family: Vesper-bold;
 	font-size: var(--heading-medium);
 }
 
 h5, h6 {
-	font-weight: 700;
+	font-family: Vesper-bold;
 	font-size: var(--heading-small);
 }
 
 p, a, span {
+    font-family: Vesper-reg;
 	font-size: var(--paragraph);
-    font-weight: 400;
 }
 
 img, video {

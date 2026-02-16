@@ -1,33 +1,39 @@
-
-html {
-    background-color: #1b1b1b;
+body {
+    background-color: var(--background-primary);
+    position: relative;
 }
 
 /* Global header */
 header {
-    --primary-fdnd: #431111;
 
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Change this from 100vw */
-    height: 10vh;
+    width: 100%; 
     padding: .5rem;
-    box-sizing: border-box; /* Add this to keep padding inside the 100% */
-    background-color: var(--primary-fdnd);
+    background-color: var(--primary-cinema);
     position: sticky;
     top: 0;
     z-index: 100;
 
-	a {
-		display: flex;
+    section {
+        display: flex;
+        justify-content: space-between;
+        width: 100vw;
 
-		img {
-			width: 100%;
-			max-width: 7rem;
-			height: auto;
-    	}
-	}
+        a {
+            display: flex;
+            flex-direction: column;
+            width: 15vw;
+
+            img {
+                width: 15vw;
+                max-width: 150px;
+                height: auto;
+            }
+        }
+    }
 
     form {
         
@@ -37,8 +43,12 @@ header {
         font-size: 1rem;
         display: flex;
         align-items: center;
-        width: 80vw;
-        max-width: 350px;
+        width: 80%;
+        margin-top: 1rem;
+
+        @media (min-width: 700px) {
+
+        }
 
         label {
             position: relative;
@@ -65,6 +75,7 @@ header {
 
             input {
                 width: 100%;
+                height: 4dvh;
                 padding: 0.6rem 0.8rem;
                 background: none;
                 border: none;
@@ -85,14 +96,11 @@ header {
             }
         }
     }
-}
-
-	svg {
-		width: 2rem;
-	}
+    }
 }
 
 /* Global main styles */
+
 main:not(.cart) {
 	margin-top: 3dvh;
 	padding: 1rem;
@@ -104,10 +112,6 @@ main:not(.cart) {
 
 /* Homepage main styles */
 main.home {	
-
-	h2 {
-		margin: 2rem 0;
-	}
 }
 
 /* all (students, teachers or both main styles */
@@ -336,42 +340,39 @@ aside.cart {
 }
 
 /* badges for all pages */
-div.badges {
-
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: .5rem;
-    margin: 0 0 2rem 0;
-
-    p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
-        background-color: var(--badges);
-        width: fit-content;
-        padding: .3rem .8rem;
-        height: 1.7rem;
-        border-radius: 1rem;
-
-
-        &:nth-of-type(1) {
-            width: 3rem;
-        }
-
-        &:nth-of-type(2) {
-
-        }
-
-        &:nth-of-type(3) {
-            display: none;
-
-            @media (min-width: 1000px) {
-                display: flex;
-            }
-        }
+div.curtains {
+    overflow: hidden;
+    img {
+        width: 50vw;
+        height: 120dvh;
+        position: absolute;
+        top: 0;
+        z-index: 100;
+        
+        animation-fill-mode: forwards; 
+        animation-duration: 1.5s; 
+        animation-timing-function: ease-in;
     }
+
+    img:nth-of-type(1) {
+        left: 0;
+        animation-name: slide-left;
+    }
+
+    img:nth-of-type(2) {
+        right: 0;
+        animation-name: slide-right;
+    }
+}
+
+@keyframes slide-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); } 
+}
+
+@keyframes slide-right {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
 }
 
 /* card design universal */
@@ -379,8 +380,10 @@ section.cardlayout {
 
     ul {
         display: grid;
+        width: 100%;
         grid-template-columns: 1fr;
         gap: 2vw;
+        color: #ffffff;
 
         @media (min-width: 550px) {
 
@@ -399,10 +402,9 @@ section.cardlayout {
     li {
         display: flex;
         flex-direction: column;
-        /* border: 2px var(--black) solid; */
-        width: 95%;
-        border-radius: 2rem;
-        /* box-shadow: var(--black) .3rem .3rem 0rem; */
+        border: 2px var(--white) solid;
+        background-color: var(--primary-cinema);
+        border-radius: var(--border-medium);
         margin-bottom: 1rem;
 
         @media (min-width: 550px) {
@@ -413,6 +415,15 @@ section.cardlayout {
         h3 {
             margin: .5rem .5rem;
             font-size: 1.3rem;
+        }
+
+        img {
+            border-radius: var(--border-medium) var(--border-medium) 0 0;
+        }
+
+        a.lightlink {
+            height: 50px;
+            border-radius: 0 0 var(--border-small) var(--border-small);
         }
     }
 }

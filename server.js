@@ -71,6 +71,13 @@ app.get('/', async (request, response) => {
   response.render('index.liquid', { persons })
 })
 
+app.get('/bioscoop', async (request, response) => {
+  const persons = await fetchItems('person', {
+    'sort': getSortField(request.query.sort),
+    'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1'
+  })
+  response.render('bioscoop.liquid', { persons })
+})
 // add to cart post function
 app.post('/add-to-cart', (request, response) => {
   const personId = request.body.id;

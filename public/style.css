@@ -1,5 +1,12 @@
+
+html {
+    background-color: #1b1b1b;
+}
+
 /* Global header */
 header {
+    --primary-fdnd: #431111;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -392,10 +399,10 @@ section.cardlayout {
     li {
         display: flex;
         flex-direction: column;
-        border: 2px var(--black) solid;
+        /* border: 2px var(--black) solid; */
         width: 95%;
         border-radius: 2rem;
-        box-shadow: var(--black) .3rem .3rem 0rem;
+        /* box-shadow: var(--black) .3rem .3rem 0rem; */
         margin-bottom: 1rem;
 
         @media (min-width: 550px) {

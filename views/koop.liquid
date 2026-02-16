@@ -1,0 +1,59 @@
+{% render 'partials/head_koop.liquid', title: person.name %}
+
+{% for person in persons %}
+<header>
+    <img src="{{ person.avatar }}" alt="{{ person.name }}">
+    <h1>{{ person.name }}</h1>
+    <p>Nickname: <strong>{{ person.nickname }}</strong></p>
+</header>
+
+<article>
+    <h2>Identity & Socials</h2>
+    <p>GitHub: <a href="https://github.com/{{ person.github_handle }}">@{{ person.github_handle }}</a></p>
+    <p>Website: <a href="{{ person.website }}">{{ person.website }}</a></p>
+    <p>Profile Card: <a href="{{ person.profilecard }}">Link</a></p>
+    <p>Vibe: {{ person.vibe_emoji }}</p>
+</article>
+
+<article>
+    <h2>Bio (Raw Content)</h2>
+    <div>{{ person.bio }}</div>
+</article>
+
+<article>
+    <h2>Personal Details</h2>
+    <p>Birthdate: {{ person.birthdate }}</p>
+    <p>Residency: {{ person.residency }}</p>
+    <p>Shoe Size: {{ person.shoe_size }}</p>
+    <p>Favorite Animal: {{ person.fav_animal }}</p>
+    <p>Favorite Season: {{ person.fav_season }}</p>
+    <p>Team: {{ person.team }}</p> 
+</article>
+
+<article>
+    <h2>Frontend Favorites</h2>
+    <p>Favorite Color: <span style="color: {{ person.fav_color }}">{{ person.fav_color }}</span></p>
+    <p>Favorite Tag: <code>{{ person.fav_tag }}</code></p>
+    <p>Favorite Attribute: <code>{{ person.fav_attribute }}</code></p>
+    <p>Favorite Property: <code>{{ person.fav_property }}</code></p>
+    <p>Favorite Feature: {{ person.fav_feature }}</p>
+    <p>Favorite Border Radius: {{ person.fav_border_radius }}px</p>
+</article>
+
+<article>
+    <h2>Custom Data (JSON)</h2>
+    <pre><code>{{ person.custom }}</code></pre>
+</article>
+
+<article>
+    <h2>Metadata</h2>
+    <p>ID: {{ person.id }}</p>
+    <p>Mugshot UUID: {{ person.mugshot }}</p>
+    <p>Bold Status: {{ person.is_bold }}</p>
+    <p>Squad IDs: {{ person.squads | join: ", " }}</p>
+    <p>Role IDs: {{ person.role | join: ", " }}</p>
+</article>
+{% endfor %}
+</main>
+
+{% render 'partials/foot.liquid', squads: squads %}

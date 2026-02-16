@@ -1,0 +1,10 @@
+{% render 'partials/head.liquid', title: 'Squad page'  %}
+
+<main class="all">
+
+<!-- Section with all students -->
+{% include 'partials/cardlayout.liquid' %}
+
+</main>
+
+{% render 'partials/foot.liquid', squads: squads %}

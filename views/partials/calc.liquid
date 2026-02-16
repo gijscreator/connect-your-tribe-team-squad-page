@@ -1,0 +1,32 @@
+<!-- Calculate age with liquid -->
+{% assign dob = person.birthdate | date: "%Y-%m-%d" %}
+{% assign current_year = "now" | date: "%Y" %}
+{% assign birth_year = dob | date: "%Y" %}
+{% assign age = current_year | minus: birth_year %}
+{% assign now_month_day = "now" | date: "%m%d" | plus: 0 %}
+{% assign dob_month_day = dob | date: "%m%d" | plus: 0 %}
+
+<!-- Check for examptions in calculation -->
+{% if now_month_day < dob_month_day %}
+  {% assign age = age | minus: 1 %}
+{% endif %}
+
+
+<!-- Calculate price with liquid -->
+
+{% assign base = person.id | plus: 0 %}
+{% assign scrambled = base | times: 1471 | plus: 53.7 %}
+
+
+{% assign range_limit = scrambled | modulo: 450 | plus: 50 %}
+
+
+{% assign step1 = range_limit | plus: 15.4 %}
+{% assign step2 = step1 | times: 3 %}
+{% assign step3 = step2 | times: 0.3 %}
+{% assign randomNumber = step3 | times: 0.1 | round: 0 %}
+
+
+{% if randomNumber < 0 %}
+  {% assign randomNumber = randomNumber | abs | plus: 20 %}
+{% endif %}

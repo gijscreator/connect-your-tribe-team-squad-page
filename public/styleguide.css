@@ -1,0 +1,109 @@
+* {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+	font-family: sans-serif;
+}
+
+.vs-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0); 
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap; 
+    width: 1px;
+}
+
+body {
+
+    /* FDND colors */
+    --primary-fdnd: #66E5BF;
+    --badges: #FFFC86;
+    --secondary: #A675F5;
+	--black: #000000;
+
+	/* font sizes */
+	--paragraph: clamp(1rem, 2vw, 1.3rem);
+	--heading-small: clamp(1.2rem, 2vw, 1rem);
+	--heading-medium: clamp(1.4rem, 2.7vw, 2.2rem);
+	--heading-big: clamp(1.4rem, 3vw, 2.5rem);
+}
+
+h1, h2 {
+	font-weight: 700;
+	font-size: var(--heading-big);
+}
+
+h3, h4 {
+	font-weight: 700;
+	font-size: var(--heading-medium);
+}
+
+h5, h6 {
+	font-weight: 700;
+	font-size: var(--heading-small);
+}
+
+p, a, span {
+	font-size: var(--paragraph);
+    font-weight: 400;
+}
+
+img, video {
+	width: 100%;
+	height: auto;
+}
+
+a.button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    background-color: var(--secondary);
+    color: white;
+    width: 50vw;
+    padding: 1rem 1rem;
+    border-radius: 25px;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        bottom: .5rem;
+        left: 11rem;
+        content: url(data:image/svg+xml,%3Csvg%20width%3D%2223%22%20height%3D%2225%22%20viewBox%3D%220%200%2023%2025%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M4.79175%2012.5H18.2084M18.2084%2012.5L11.5001%205.20837M18.2084%2012.5L11.5001%2019.7917%22%20stroke%3D%22white%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E);
+
+        @media (min-width: 700px) {
+            left: 10rem;
+        }
+    }
+}
+
+a.lightbutton {
+    display: flex;
+    text-decoration: none;
+    background-color: var(--primary-fdnd);
+    color: black;
+    width: 75vw;
+    padding: 1rem 1rem;
+    border-radius: 25px;
+    position: relative;
+
+    @media (min-width: 700px) {
+        width: 50vw;
+    }
+
+    &::after {
+        position: absolute;
+        left: 15rem;
+        top: .8em;
+        content: url(data:image/svg+xml,%3Csvg%20width%3D%2223%22%20height%3D%2225%22%20viewBox%3D%220%200%2023%2025%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M4.79175%2012.5H18.2084M18.2084%2012.5L11.5001%205.20837M18.2084%2012.5L11.5001%2019.7917%22%20stroke%3D%22black%22%20stroke-width%3D%221.6%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%2F%3E%3C%2Fsvg%3E);
+        @media (min-width: 700px) {
+            left: 50%;
+        }
+    }
+}
+

@@ -1,0 +1,52 @@
+{% include 'partials/calc.liquid' %}
+
+<section class="individual">
+    
+    <article>
+        <h2>{{ person.name }}</h2>
+        <img src="https://fdnd.directus.app/assets/{{ person.mugshot }}"  width="400" height="300" alt="">
+    </article>
+    
+    <section>   
+        <div class="badges">
+            {% if age %}
+                <p class="age">{{ age }}</p>
+            {% endif %}
+            {% if person.residency %}
+                <p>{{ person.residency }}</p>
+                {% endif %}
+            {% if person.fav_property %}
+                <p>{{ person.fav_property | strip_html }}</p>
+            {% endif %}
+        </div>
+
+        <p class="price"> {{randomNumber}},-
+            <span>92,5</span>
+        </p>
+
+        <p>
+            Hey! Ik ben <strong>{{ person.name }}</strong> (ook wel bekend als <em>{{ person.nickname | strip_html}}</em>). 
+            Ik ben {{ age }} jaar oud en woon in het gezellige {{ person.residency }}. 
+            Mijn vibe is momenteel helemaal {{ person.vibe_emoji }}. 
+        </p>
+
+        <p>
+            In de <strong>{{ person.fav_season }}</strong> kun je me meestal vinden terwijl ik werk met 
+            mijn favoriete HTML-tag <code>{{ person.fav_tag | escape }}</code> of 
+            aan het puzzelen ben met <code>{{ person.fav_property }}</code>. 
+            Mijn favoriete onderdeel van het web? Absoluut de {{ person.fav_feature }}! 
+        </p>
+
+        <p>
+            <strong>Fun fact:</strong> Mijn favoriete dier is een {{ person.fav_animal }} en 
+            ik loop rond op maatje {{ person.shoe_size }}.
+        </p>
+
+        <form action="/add-to-cart" method="POST">
+            <input type="hidden" name="id" value="{{ person.id }}">
+            <button type="submit">{{ person.name | split: " " | first}} In mijn winkelmandje </button>
+        </form>
+
+
+    </section>
+</section>

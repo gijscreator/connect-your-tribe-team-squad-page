@@ -1,0 +1,216 @@
+{% render 'partials/head.liquid', title: person.name %}
+{% include 'partials/calc.liquid' %}
+{% include 'partials/vars.liquid' %}
+
+<a href="/">Back</a>
+
+<main class="student">
+
+{% comment %} Render individual layout {% endcomment %}
+{% include 'partials/individual.liquid' %}
+
+{% comment %} Favorite season {% endcomment %}
+<section>
+    <h3>Mijn favoriete seizoen:</h3>
+
+    <article>
+    <!-- Snowfall animation ( very cool) -->
+
+        <!-- Snowfall far -->
+        <div class="snow snow--far" aria-hidden="true">
+            <span class="flake" style="--x:4;  --fall:28s; --delay:-22s; --drift:2.0vw;"></span>
+            <span class="flake" style="--x:12; --fall:26s; --delay:-8s;  --drift:2.5vw;"></span>
+            <span class="flake" style="--x:19; --fall:30s; --delay:-18s; --drift:1.6vw;"></span>
+            <span class="flake" style="--x:27; --fall:25s; --delay:-14s; --drift:2.2vw;"></span>
+            <span class="flake" style="--x:33; --fall:29s; --delay:-26s; --drift:1.8vw;"></span>
+            <span class="flake" style="--x:41; --fall:27s; --delay:-10s; --drift:2.6vw;"></span>
+            <span class="flake" style="--x:48; --fall:31s; --delay:-16s; --drift:1.7vw;"></span>
+            <span class="flake" style="--x:56; --fall:26s; --delay:-20s; --drift:2.4vw;"></span>
+            <span class="flake" style="--x:63; --fall:30s; --delay:-12s; --drift:1.9vw;"></span>
+            <span class="flake" style="--x:71; --fall:28s; --delay:-24s; --drift:2.3vw;"></span>
+            <span class="flake" style="--x:83; --fall:32s; --delay:-28s; --drift:1.5vw;"></span>
+            <span class="flake" style="--x:92; --fall:27s; --delay:-6s;  --drift:2.1vw;"></span>
+            <span class="flake" style="--x:97; --fall:29s; --delay:-19s; --drift:1.8vw;"></span>
+            <span class="flake" style="--x:76; --fall:31s; --delay:-15s; --drift:2.0vw;"></span>
+        </div>
+
+        <!-- Snowfall mid -->
+        <div class="snow snow--mid" aria-hidden="true">
+            <span class="flake" style="--x:2;  --fall:18s; --delay:-11s; --drift:3.2vw;"></span>
+            <span class="flake" style="--x:9;  --fall:17s; --delay:-4s;  --drift:3.8vw;"></span>
+            <span class="flake" style="--x:16; --fall:20s; --delay:-15s; --drift:3.0vw;"></span>
+            <span class="flake" style="--x:24; --fall:16s; --delay:-9s;  --drift:4.2vw;"></span>
+            <span class="flake" style="--x:31; --fall:19s; --delay:-17s; --drift:3.6vw;"></span>
+            <span class="flake" style="--x:38; --fall:18s; --delay:-6s;  --drift:4.0vw;"></span>
+            <span class="flake" style="--x:46; --fall:21s; --delay:-13s; --drift:3.1vw;"></span>
+            <span class="flake" style="--x:53; --fall:17s; --delay:-12s; --drift:4.4vw;"></span>
+            <span class="flake" style="--x:61; --fall:20s; --delay:-7s;  --drift:3.5vw;"></span>
+            <span class="flake" style="--x:68; --fall:16s; --delay:-5s;  --drift:4.6vw;"></span>
+            <span class="flake" style="--x:74; --fall:19s; --delay:-14s; --drift:3.3vw;"></span>
+            <span class="flake" style="--x:82; --fall:18s; --delay:-10s; --drift:4.1vw;"></span>
+            <span class="flake" style="--x:90; --fall:21s; --delay:-18s; --drift:3.2vw;"></span>
+            <span class="flake" style="--x:96; --fall:17s; --delay:-8s;  --drift:4.3vw;"></span>
+        </div>
+
+        <!-- Snowfall near -->
+        <div class="snow snow--near" aria-hidden="true">
+            <span class="flake" style="--x:6;  --fall:11s; --delay:-9s;  --drift:6.0vw;"></span>
+            <span class="flake" style="--x:13; --fall:10s; --delay:-2s;  --drift:7.0vw;"></span>
+            <span class="flake" style="--x:22; --fall:12s; --delay:-7s;  --drift:6.5vw;"></span>
+            <span class="flake" style="--x:29; --fall:9s;  --delay:-5s;  --drift:7.6vw;"></span>
+            <span class="flake" style="--x:36; --fall:13s; --delay:-11s; --drift:6.2vw;"></span>
+            <span class="flake" style="--x:44; --fall:10.5s; --delay:-8s; --drift:7.2vw;"></span>
+            <span class="flake" style="--x:52; --fall:11.5s; --delay:-4s; --drift:6.8vw;"></span>
+            <span class="flake" style="--x:59; --fall:9.8s;  --delay:-10s;--drift:7.9vw;"></span>
+            <span class="flake" style="--x:66; --fall:12.8s; --delay:-6s; --drift:6.4vw;"></span>
+            <span class="flake" style="--x:73; --fall:10.2s; --delay:-3s; --drift:7.4vw;"></span>
+            <span class="flake" style="--x:81; --fall:11.8s; --delay:-12s;--drift:6.6vw;"></span>
+            <span class="flake" style="--x:88; --fall:9.6s;  --delay:-7s; --drift:8.2vw;"></span>
+            <span class="flake" style="--x:94; --fall:12.2s; --delay:-9s; --drift:6.9vw;"></span>
+            <span class="flake" style="--x:98; --fall:10.8s; --delay:-5s; --drift:7.1vw;"></span>
+        </div>
+
+        <img src="/assets/{{ person.fav_season }}.webp" alt="">
+
+        <div>  
+            <h3>{{ person.fav_season }}</h3>
+
+            {% case person.fav_season %}
+            {% when "Zomer" %}
+                <p class="desktop-only">De Eiffeltoren groeit in de zomer! Door de hitte zet het ijzer van de constructie uit. Hierdoor kan de toren op een bloedhete dag wel 15 centimeter groter zijn dan in de winter.</p>
+                <p class="mobile-only">Wist je dat de Eiffeltoren in de zomer 15 cm groter kan worden door de hitte?</p>
+
+            {% when "Lente" %}
+                <p class="desktop-only">Wist je dat de lente op het noordelijk halfrond steeds vroeger begint? Door de opwarming van de aarde beginnen planten gemiddeld twee tot drie dagen eerder te bloeien per decennium. De natuur heeft dus een tikkeltje meer haast dan vroeger!</p>
+                <p class="mobile-only">De lente begint steeds vroeger: planten bloeien nu gemiddeld al dagen eerder dan vroeger.</p>
+
+            {% when "Herfst" %}
+                <p class="desktop-only">De prachtige kleuren die we zien (geel, oranje, rood) zitten het hele jaar al in de bladeren, maar ze zijn "verstopt". In de zomer overheerst het groene bladgroen (chlorofyl). Zodra de dagen korter worden, breekt dat groen af en komen de verborgen kleuren eindelijk tevoorschijn.</p>
+                <p class="mobile-only">Herfstkleuren zitten het hele jaar al in het blad, maar worden pas zichtbaar als het groen afbreekt.</p>
+
+            {% when "Winter" %}
+                <p class="desktop-only">Geen twee sneeuwvlokken zijn hetzelfde, maar ze hebben wel één ding gemeen: ze hebben bijna altijd zes zijden. Dit komt door de manier waarop watermoleculen zich aan elkaar hechten wanneer ze bevriezen tot ijskristallen.</p>
+                <p class="mobile-only">Sneeuwvlokken zijn uniek, maar hebben bijna altijd zes zijden door de vorm van watermoleculen.</p>
+
+            {% else %}
+                <p>Ik was zo triest om geen seizoen in te vullen</p>
+            {% endcase %}
+
+            <a href="/search/{{ person.fav_season }}" target="_blank" class="lightbutton">Alle liefhebbers van de {{ person.fav_season }}</a>
+        </div>
+
+    </article>
+</section>
+
+{% comment %} bron: https://developer.spotify.com/documentation/embeds/tutorials/creating-an-embed {% endcomment %}
+<iframe
+    style="border-radius:2rem"
+    src="https://open.spotify.com/embed/track/{{ track_id | default: '4PTG3Z6ehGkBFwjybzWkR8' }}?utm_source=generator"
+    width="100%"
+    height="352"
+    frameBorder="0"
+    allowfullscreen=""
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+</iframe>
+
+{% comment %} Favorite animal {% endcomment %}
+<section>
+    <h3>Mijn favoriete dier:</h3>
+    <article>
+        <img src="/assets/{{ person.fav_animal }}.svg" alt="">
+        <div>
+            <h3>{{ person.fav_animal }}</h3>
+            {% case person.fav_animal %}
+                {% when 'Aap' %}
+                    <p class="desktop-only">Sommige apensoorten, zoals kapucijnapen, zijn opmerkelijk intelligent en gebruiken stenen als gereedschap om keiharde noten te kraken. Wetenschappers hebben ontdekt dat ze zelfs specifieke "werkplaatsen" hebben waar ze hun gereedschapskisten van generatie op generatie bewaren en doorgeven.</p>
+                    <p class="mobile-only">Wist je dat sommige apen stenen gebruiken als gereedschap om noten te kraken?</p>
+                    
+                {% when 'Flamingo' %}
+                    <p class="desktop-only">Een flamingo wordt van nature met grijze veren geboren. De iconische roze of oranje kleur ontstaat pas later door hun dieet, dat rijk is aan bètacaroteen uit algen en garnalen. In dierentuinen moeten verzorgers vaak speciale supplementen toevoegen, anders zouden de flamingo's langzaam weer wit worden.</p>
+                    <p class="mobile-only">Flamingo's worden pas roze door het eten van algen en garnalen; ze worden grijs geboren.</p>
+
+                {% when 'Giraffe' %}
+                    <p class="desktop-only">Ondanks hun enorme lengte is de nek van een giraffe eigenlijk te kort om comfortabel bij de grond te komen. Wanneer ze uit een waterbron willen drinken, moeten ze hun voorpoten in een onhandige spreidstand zetten of door hun knieën gaan, wat hen op dat moment kwetsbaar maakt voor roofdieren.</p>
+                    <p class="mobile-only">Een giraffe moet zijn poten spreiden om te kunnen drinken omdat zijn nek te kort is.</p>
+
+                {% when 'Hond' %}
+                    <p class="desktop-only">De neusafdruk van een hond is net zo uniek als de vingerafdruk van een mens; er zijn geen twee honden op de wereld met precies hetzelfde patroon van groeven en bultjes. Bovendien is hun reukvermogen zo sterk dat ze sommige ziekten of emoties bij mensen kunnen ruiken voordat wij het zelf doorhebben.</p>
+                    <p class="mobile-only">Elke hondenneus is uniek, net als de vingerafdruk van een mens.</p>
+
+                {% when 'Kat' %}
+                    <p class="desktop-only">Katten beschikken over een indrukwekkend vocaal bereik en kunnen meer dan 100 verschillende geluiden maken, van spinnen tot miauwen. Ter vergelijking: honden maken er meestal maar rond de 10. Interessant genoeg miauwen volwassen katten bijna uitsluitend om met mensen te communiceren, niet met andere katten.</p>
+                    <p class="mobile-only">Wist je dat katten meer dan 100 verschillende geluiden kunnen maken?</p>
+
+                {% when 'Koala' %}
+                    <p class="desktop-only">Koala's zijn de kampioenen van het luieren en slapen tot wel 20 tot 22 uur per dag. Dit is bittere noodzaak: hun dieet bestaat volledig uit eucalyptusbladeren, die niet alleen giftig zijn voor de meeste dieren, maar ook extreem weinig energie leveren, waardoor de koala elk restje energie moet sparen.</p>
+                    <p class="mobile-only">Koala's slapen tot wel 22 uur per dag omdat hun eten weinig energie geeft.</p>
+
+                {% when 'Konijn' %}
+                    <p class="desktop-only">Een konijn heeft een fenomenaal panoramisch gezichtsveld van bijna 360 graden. Door de plaatsing van hun ogen aan de zijkant van hun kop kunnen ze vijanden van bijna elke kant zien aankomen, zelfs van achteren, zonder dat ze hun kop hoeven te draaien. Alleen een klein plekje recht voor hun neus is een dode hoek.</p>
+                    <p class="mobile-only">Konijnen kunnen bijna 360 graden om zich heen kijken zonder hun kop te draaien.</p>
+
+                {% when 'Leeuw' %}
+                    <p class="desktop-only">In een leeuwenfamilie, ook wel een 'troep' genoemd, zijn de leeuwinnen de primaire jagers die strategisch samenwerken om prooien te vangen. Terwijl de dames voor het eten zorgen, gebruiken de mannetjes hun indrukwekkende manen en luide brul om het territorium en de jongen te verdedigen tegen indringers.</p>
+                    <p class="mobile-only">Bij leeuwen zijn de vrouwtjes de baas tijdens de jacht.</p>
+
+                {% when 'Neushoorn' %}
+                    <p class="desktop-only">De imposante hoorn van een neushoorn is een biologisch wonder: hij is niet gemaakt van bot, maar van keratine. Dit is exact hetzelfde eiwit waaruit je eigen vingernagels en haar zijn opgebouwd. Als de hoorn afbreekt, kan hij gedurende het leven van de neushoorn gewoon weer langzaam aangroeien.</p>
+                    <p class="mobile-only">De hoorn van een neushoorn is gemaakt van hetzelfde materiaal als je nagels.</p>
+
+                {% when 'Nijlpaard' %}
+                    <p class="desktop-only">Ondanks hun enorme gewicht en het feit dat ze veel tijd in de rivier doorbrengen, kunnen nijlpaarden eigenlijk niet zwemmen of drijven. Ze zijn zo zwaar dat ze simpelweg over de bodem van de rivier rennen of lopen. Om adem te halen, zetten ze zich krachtig af van de bodem om even boven water te komen.</p>
+                    <p class="mobile-only">Nijlpaarden kunnen niet echt zwemmen; ze lopen over de bodem van het water.</p>
+
+                {% when 'Olifant' %}
+                    <p class="desktop-only">Olifanten zijn de enige zoogdieren ter wereld die fysiek niet in staat zijn om te springen; al hun vier de poten blijven altijd dicht bij de grond. Dit komt door hun enorme gewicht en de unieke structuur van hun botten, die gebouwd zijn op stabiliteit en het dragen van duizenden kilo's in plaats van op vering.</p>
+                    <p class="mobile-only">Olifanten zijn de enige zoogdieren ter wereld die niet kunnen springen.</p>
+
+                {% when 'Panda' %}
+                    <p class="desktop-only">Een reuzenpanda is een echte fijnproever met een enorme eetlust: hij eet gemiddeld 12 tot 38 kilo bamboe per dag. Omdat bamboe heel weinig voedingsstoffen bevat, moeten ze tot wel 14 uur per dag besteden aan eten om genoeg energie te krijgen om hun ronde lichaam in beweging te houden.</p>
+                    <p class="mobile-only">Een panda eet tot wel 38 kilo bamboe per dag om fit te blijven.</p>
+
+                {% when 'Papegaai' %}
+                    <p class="desktop-only">Papegaaien zijn uniek in de vogelwereld omdat zij de enige soort zijn die hun voedsel met hun poten kunnen vastpakken en behendig naar hun snavel kunnen brengen. Hun poten werken bijna als menselijke handen, wat hen helpt bij het pellen van zaden en het manipuleren van complexe objecten.</p>
+                    <p class="mobile-only">Papegaaien zijn de enige vogels die hun pootjes als handen gebruiken om te eten.</p>
+
+                {% when 'Pinguin' %}
+                    <p class="desktop-only">Pinguïns hebben een ingenieuze overlevingsstrategie voor het leven op zee: ze bezitten een speciale supraorbitale klier boven hun ogen. Deze klier filtert overtollig zout uit hun bloedbaan, waardoor ze zonder problemen zout zeewater kunnen drinken en de zoutkristallen via hun snavel weer uitscheiden.</p>
+                    <p class="mobile-only">Pinguïns kunnen zeewater drinken dankzij een speciaal filter in hun lichaam.</p>
+
+                {% when 'Tijger' %}
+                    <p class="desktop-only">De strepen van een tijger zijn net zo uniek als een vingerafdruk; geen twee tijgers hebben hetzelfde patroon. Een fascinerend detail is dat deze strepen niet alleen in de vacht zitten; als je een tijger zou scheren, zou je zien dat het gestreepte patroon ook direct op hun huid getatoeëerd lijkt te staan.</p>
+                    <p class="mobile-only">Tijgers hebben niet alleen een gestreepte vacht, maar ook een gestreepte huid!</p>
+
+                {% when 'Vos' %}
+                    <p class="desktop-only">Vossen zijn ware natuurkundigen tijdens de jacht: ze maken gebruik van het magnetisch veld van de aarde om de afstand tot hun prooi te bepalen. Onderzoekers zagen dat vossen veel vaker succesvol zijn in het vangen van muizen wanneer ze hun kenmerkende sprong in een noordoostelijke richting uitvoeren.</p>
+                    <p class="mobile-only">Vossen jagen met behulp van het magnetisch veld van de aarde.</p>
+
+                {% when 'Zebra' %}
+                    <p class="desktop-only">De zwart-witte strepen van een zebra zijn niet alleen voor de sier; ze werken als een verwarrende optische illusie voor roofdieren en bijtende vliegen. Wanneer een hele kudde zebra's gaat rennen, maken de flitsende strepen het voor een leeuw bijna onmogelijk om op één specifiek individu te focussen.</p>
+                    <p class="mobile-only">De strepen van een zebra zijn bedoeld om roofdieren in de war te brengen.</p>
+
+                {% else %}
+                    <p>Het lijkt erop dat er geen favoriet dier is ingevuld. Dat is jammer, want de natuur heeft zoveel wonderbaarlijke wezens te bieden! Vul snel je favoriete dier in om hier een interessant feitje te ontdekken over jouw lievelingsdier.</p>
+            {% endcase %}
+        </div>
+    </article>
+</section>
+
+<section>
+    {% if person.website %}
+        <h3>Mijn website</h3>
+        <embed src="{{ person.website }}">
+    {% endif %}
+</section>
+
+<section>
+    <img src="/assets/virm3.png" alt="">
+    <img src="/assets/virm4.png" alt="">
+</section>
+
+
+</main>
+
+
+{% render 'partials/foot.liquid', squads: squads %}

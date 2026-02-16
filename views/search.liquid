@@ -1,0 +1,15 @@
+
+{% render 'partials/head.liquid', title: 'Squad page'  %}
+
+<main class="search">
+
+<!-- only show search result text when there is a search term -->
+
+{% if searchTerm %}
+    <h2>Resultaten voor: "<strong>{{ searchTerm }}</strong>"</h2>
+{% endif %}
+
+<!-- Section with search results -->
+{% include 'partials/cardlayout.liquid' %}
+
+</main>

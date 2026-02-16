@@ -1,0 +1,18 @@
+{% render 'partials/head_cart.liquid', title: 'Squad page' %}
+<main class="berichten">
+
+{% for message in messages %}
+    <ul>
+        <li>
+            <p>{{ message.text }}</p>
+        </li>
+    </ul>
+{% endfor %}
+
+<form method="POST" action="/berichten">
+    <input type="text" name="message">
+    <button type="submit">ik wil dit berichtje sturen</button>
+</form>
+
+</main>
+

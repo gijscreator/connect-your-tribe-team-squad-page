@@ -42,6 +42,11 @@ body {
     --badges: #431111;
     --secondary: #F7F7F7;
     --background-primary: #343434; 
+    --button-bg-biege: #D0C3AA;
+    --button-bg-red: #AC2323;
+    --button-bg-offwhite: #ECECEC;
+    --button-bg-brown: #431111;
+    --button-text: #2E2E2E;
 	--black: #000000;
     --white: white;
 
@@ -108,13 +113,27 @@ a.link {
     max-width: 600px;
     min-width: 100px;
 
-    &.lightlink {
-        background-color: var(--white);
-        color: var(--primary-cinema);
+    &.beige {
+        background-color: var(--button-bg-biege);
+        color: var(--button-text);
+        border: var(--button-bg-brown) 2px solid;
     }
 
-    &.darklink {
-        background-color: var(--primary-cinema);
+    &.red {
+        background-color: var(--button-bg-red);
         color: var(--white);
+        border: var(--button-text) 2px solid;
+    }
+
+    &.offwhite {
+        background-color: var(--button-bg-offwhite);
+        color: var(--button-text);
+        border: var(--button-bg-brown) 2px solid;
+    }
+
+    &.brown {
+        background-color: var(--button-bg-brown);
+        color: var(--white);
+        border: #946F18 2px solid;
     }
 }

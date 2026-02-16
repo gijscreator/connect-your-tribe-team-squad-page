@@ -1,92 +1,212 @@
 import express from 'express'
-
-import { Liquid } from 'liquidjs';
-
-
-// Vul hier jullie team naam in
-const teamName = '';
-
+import { Liquid } from 'liquidjs'
 
 const app = express()
+const engine = new Liquid()
+const PORT = process.env.PORT || 8000
+const API_BASE = 'https://fdnd.directus.app/items'
 
-app.use(express.static('public'))
+// config for all roles
+const ROLE_MAP = {
+  'teachers': 1, 'leaders': 2, 'tribes': 3, 'students': 4,
+  'experts': 5, 'owners': 6, 'officers': 7
+}
 
-const engine = new Liquid();
-app.engine('liquid', engine.express()); 
+// config for filters
+const SORT_MAP = {
+  'baldness': 'is_bold', 'a-z': 'name', 'shoe-size': 'shoe_size',
+  'season': 'fav_season', 'age': 'birthdate', 'fav-css': 'fav_property',
+  'nickname': 'nickname', 'git-handle': 'github_handle',
+  'fav-color': 'fav_color', 'residency': 'residency', 'z-a': '-name'
+}
 
+// express engine
+app.engine('liquid', engine.express())
 app.set('views', './views')
+app.use(express.static('public'))
+app.use(express.urlencoded({ extended: true }))
 
-app.use(express.urlencoded({extended: true}))
-
-
-app.get('/', async function (request, response) {
-
-  // Filter eerst de berichten die je wilt zien, net als bij personen
-  // Deze tabel wordt gedeeld door iedereen, dus verzin zelf een handig filter,
-  // bijvoorbeeld je teamnaam, je projectnaam, je person ID, de datum van vandaag, etc..
-  const params = {
-    'filter[for]': `Team ${teamName}`,
+// fetch helper
+async function fetchItems(endpoint, queryParams = {}) {
+  const defaultParams = {
+    'filter[squads][squad_id][cohort]': '2526',
+    'fields': '*,squads.*'
   }
+  const mergedParams = new URLSearchParams({ ...defaultParams, ...queryParams })
+  
+  try {
+    const response = await fetch(`${API_BASE}/${endpoint}?${mergedParams}`)
+    if (!response.ok) throw new Error(`API Error: ${response.statusText}`)
+    const json = await response.json()
+    return json.data || []
+  } catch (err) {
+    console.error(err)
+    return []
+  }
+}
 
+// load squads
+const squadsData = await fetchItems('squad', { 'filter[tribe][name]': 'FDND Jaar 1' })
+app.locals.squads = squadsData 
+
+// helper for sorting
+const getSortField = (querySort) => SORT_MAP[querySort] || 'name'
+
+
+// define cart items (default = empty)
+
+let squadCart = [];
+
+// define message items (default = empty)
+let messages = ["test, test"];
+
+// all routes 
+
+// home page
+app.get('/', async (request, response) => {
+  const persons = await fetchItems('person', {
+    'sort': getSortField(request.query.sort),
+    'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1'
+  })
+  response.render('index.liquid', { persons })
+})
+
+// add to cart post function
+app.post('/add-to-cart', (request, response) => {
+  const personId = request.body.id;
+  
+  // Only add if it's not already in the cart
+  if (!squadCart.includes(personId)) {
+    squadCart.push(personId);
+  }
+  
+  // Redirect back to the /cart page when adding was succesful
+  response.redirect('/cart');
+});
+
+// remove from cart post function
+app.post('/remove-from-cart', (request, response) => {
+  const personId = request.body.id;
+
+  // 1. Remove the person from the array
+  squadCart = squadCart.filter(id => id !== personId);
+
+  // 2. Decide where to go:
+  if (squadCart.length === 0) {
+    // If no one is left, go home
+    response.redirect('/');
+  } else {
+    // If people are still there, stay on the cart page
+    response.redirect('/cart');
+  }
+});
+
+app.get('/berichten', async function (request, response) {
+
+  const params = {
+    'filter[for]': 'Team Happy',
+  }
+  
   // Maak hiermee de URL aan, zoals we dat ook in de browser deden
   const apiURL = 'https://fdnd.directus.app/items/messages?' + new URLSearchParams(params)
-
-  // Laat eventueel zien wat de filter URL is
-  // (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
-  // console.log('API URL voor messages:', apiURL)
-
-  // Haal daarna de messages data op
   const messagesResponse = await fetch(apiURL)
-
-  // Lees van de response van die fetch het JSON object in, waar we iets mee kunnen doen
+  
+  // Zet de JSON daarvan om naar een object
   const messagesResponseJSON = await messagesResponse.json()
-
-  // Controleer eventueel de data in je console
-  // console.log(messagesResponseJSON)
-
-  // En render de view met de messages
-  response.render('index.liquid', {
-    teamName: teamName,
+  
+  // Die we vervolgens doorgeven aan onze view
+  response.render('messages.liquid', {
     messages: messagesResponseJSON.data
   })
 })
 
-app.post('/', async function (request, response) {
-
-  // Stuur een POST request naar de messages tabel
-  // Een POST request bevat ook extra parameters, naast een URL
+app.post('/berichten', async function (request, response) {
+  // data naar de api
   await fetch('https://fdnd.directus.app/items/messages', {
-
-    // Overschrijf de standaard GET method, want ook hier gaan we iets veranderen op de server
     method: 'POST',
 
-    // Geef de body mee als JSON string
     body: JSON.stringify({
-      // Dit is zodat we ons bericht straks weer terug kunnen vinden met ons filter
-      for: `Team ${teamName}`,
-      // En dit zijn onze formuliervelden
-      from: request.body.from,
-      text: request.body.text
+      for: 'Team Happy',
+      text: request.body.message,
+      from: request.body.from
     }),
-
-    // En vergeet deze HTTP headers niet: hiermee vertellen we de server dat we JSON doorsturen
-    // (In realistischere projecten zou je hier ook authentication headers of een sleutel meegeven)
     headers: {
       'Content-Type': 'application/json;charset=UTF-8'
     }
-  });
+  })
 
-  // Stuur de browser daarna weer naar de homepage
-  response.redirect(303, '/')
+  // redirect to messages 
+  response.redirect(303, '/berichten')
 })
 
+app.get('/cart', async (request, response) => {
+  // If the cart is empty, just render an empty list
+  if (squadCart.length === 0) {
+    return response.render('cart.liquid', { cart_items: [] });
+  }
 
-app.set('port', process.env.PORT || 8000)
+  // Filter Directus to only give us people in our squadCart array
+  const cart_items = await fetchItems('person', {
+    'filter[id][_in]': squadCart.join(',')
+  });
 
-if (teamName == '') {
-  console.log('Voeg eerst de naam van jullie team in de code toe.')
-} else {
-  app.listen(app.get('port'), function () {
-    console.log(`Application started on http://localhost:${app.get('port')}`)
+  response.render('cart.liquid', { cart_items });
+});
+
+app.post('/search', (request, response) => {
+  const searchTerm = request.body.search?.trim()
+  response.redirect(303, searchTerm ? `/search/${encodeURIComponent(searchTerm)}` : '/')
+})
+
+app.get('/search/:searchTerm', async (request, response) => {
+  const { searchTerm } = request.params
+  
+  // --- The Easter Egg Logic ---
+  const isEasterEgg = searchTerm.toLowerCase() === 'koop'
+  
+  const searchFields = [
+    'name', 'nickname', 'github_handle', 'residency', 
+    'fav_season', 'fav_animal', 'fav_property', 'vibe_emoji', 'custom'
+  ]
+  
+  const query = {}
+  searchFields.forEach((field, index) => {
+    query[`filter[_or][${index}][${field}][_icontains]`] = searchTerm
   })
-}
+
+  const persons = await fetchItems('person', query)
+
+  // Choose the template based on the search term
+  const template = isEasterEgg ? 'koop.liquid' : 'search.liquid'
+  
+  response.render(template, { persons, searchTerm })
+})
+
+app.get('/student/:id', async (request, response) => {
+  // Single items don't need the list filters, so we use fetch directly or a modified helper
+  const person = await fetchItems(`person/${request.params.id}`)
+  response.render('student.liquid', { person })
+})
+
+app.get('/:roleSlug', async (request, response, next) => {
+  const roleId = ROLE_MAP[request.params.roleSlug]
+  if (!roleId) return next()
+
+  const persons = await fetchItems('person', {
+    'filter[role][role_id]': roleId,
+    'sort': getSortField(request.query.sort),
+    'limit': -1
+  })
+
+  const roleName = persons[0]?.role?.[0]?.role_id?.name || request.params.roleSlug
+  response.render('all.liquid', { persons, roleName })
+})
+
+// 404 route
+app.use((request, response) => {
+  response.status(404).render('404.liquid', { 
+    path: request.path 
+  });
+});
+
+app.listen(PORT, () => console.log(`App: http://localhost:${PORT}`))

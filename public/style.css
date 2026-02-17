@@ -166,7 +166,8 @@ main:has(section.cardlayout) {
     }
 
     &:has(aside.filter.open) {
-        width: 60%
+        flex-grow: 1; 
+        transition: all 0.4s ease;
     }
 
     section.taperollwrapper {
@@ -485,12 +486,18 @@ aside.cart {
 }
 
 aside.filter {
-    display: none;
-    width: 10%;
-    height: 100%;
+    display: flex; 
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: width 0.4s ease, opacity 0.3s ease;
+    background-color: var(--white); 
+    flex-shrink: 0;
 
     &.open {
-        display: flex;
+        width: 250px;
+        opacity: 1;
+        padding: 1rem;
     }
 }
 
@@ -542,6 +549,8 @@ div.curtains {
 
 /* card design universal */
 section.cardlayout {
+    container-type: inline-size;
+    width: 100%;
 
     article {
         display: flex;
@@ -576,18 +585,12 @@ section.cardlayout {
         color: #ffffff;
 
 
-        @media (min-width: 650px) {
+        @container (min-width: 650px) {
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1.5vw;
         }
-
-        @media (min-width: 1089px) {
+        
+        @container (min-width: 1089px) {
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1vw;
-        }
-
-        @media (min-width: 1700px) {
-            grid-template-columns: repeat(4, minmax(0, 1fr));
         }
     }
 

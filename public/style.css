@@ -46,7 +46,7 @@ header {
     form {
         
         --inline-padding: 1rem;
-        --icon-size: 18px;
+        --icon-size: 1.2rem;
     
         font-size: 1rem;
         display: flex;
@@ -106,8 +106,13 @@ header {
     }
 }
 
-/* Global main styles */
+main {
+    section.taperollwrapper {
+        display: none;
+    }
+}
 
+/* Global main styles */
 main:not(.cart) {
 	margin-top: 3dvh;
 	padding: 1rem;
@@ -115,15 +120,65 @@ main:not(.cart) {
     @media (min-width: 789px) {
         padding: 3rem;
     }
+
+    h2 {
+        color: white;
+    }
 }
 
-/* Homepage main styles */
-main.home {	
-}
+main:has(section.cardlayout) {
+    @media (min-width: 1089px) {
+        width: 80%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
 
-/* all (students, teachers or both main styles */
-main.all {
+    section.taperollwrapper {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        width: 100%;
+        top: 0; 
+        left: 0;
+        height: 100%; 
+        z-index: -1;
+        pointer-events: none;
 
+        img {
+            position: sticky;
+            top: 15dvh; 
+            width: 10vw;
+            z-index: 2;
+        }
+        
+        div.taperollsleft, div.taperollsright {
+            position: relative;
+            width: 10vw;
+            height: 100%;
+
+            div {
+                position: absolute;
+                top: 0;
+                width: 10vw;
+                height: 100%; 
+                background-color: #1a1a1a; 
+                background-image: 
+                    radial-gradient(circle, #fff 50%, transparent 50%),
+                    radial-gradient(circle, #fff 50%, transparent 50%);
+                background-size: 1.5vw 1.5vw; 
+                background-position: 10% 0, 90% 0; 
+                background-repeat: repeat-y;
+            }
+        }
+
+        .taperollsleft .film-tape-css { 
+            left: 0; 
+        }
+
+        .taperollsright .film-tape-css { 
+            right: 0; 
+        }
+    }
 }
 
 /* student page individual main styles */
@@ -346,6 +401,7 @@ aside.cart {
     background-color: purple;
 }
 
+/* badges for all pages */
 div.badges {
     display: flex;
     justify-content: space-around;
@@ -363,7 +419,6 @@ div.badges {
     }
 }
 
-/* badges for all pages */
 div.curtains {
     
     img {
@@ -389,6 +444,9 @@ div.curtains {
     }
 }
 
+
+
+
 @keyframes slide-left {
     from { transform: translateX(0); }
     to { transform: translateX(-100%); } 
@@ -408,13 +466,13 @@ section.cardlayout {
         grid-template-columns: 1fr;
         gap: 2vw;
         color: #ffffff;
+        
 
-        @media (min-width: 550px) {
-
+        @media (min-width: 650px) {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
 
-        @media (min-width: 789px) {
+        @media (min-width: 1089px) {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
@@ -430,6 +488,26 @@ section.cardlayout {
         background-color: var(--primary-cinema);
         border-radius: var(--border-medium);
         margin-bottom: 1rem; position: relative;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: radial-gradient(
+                circle at var(--mouse-x) var(--mouse-y), 
+                rgba(255, 255, 255, 0.693) 0%, 
+                transparent 30%
+            );
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
 
         @media (min-width: 550px) {
 

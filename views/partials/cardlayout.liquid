@@ -7,7 +7,7 @@
                 {% include 'partials/calc.liquid' %}
                 {% include 'partials/vars.liquid' %}
                 <!-- Individual student card --> 
-                <li>
+                <li class="card">
                     <img src="https://fdnd.directus.app/assets/{{ person.mugshot }}"  width="400" height="300" alt="">
                     <p class="border" style="--border-radius: {{ person.fav_border_radius | default: 0 }}px;"> Fav border radius</p>
 
@@ -25,7 +25,7 @@
                     <article>
                         <h3>{{ person.name | strip_html }}</h3>
                         <!-- linkje met alleen de voornaam -->
-                        <a class="link beige" href="/student/{{ person.id }}">Meer over {{ person.name | split: " " | first}}</a>
+                        <a class="meer-over" href="/student/{{ person.id }}">Meer over {{ person.name | split: " " | first}}</a>
                     </article>
                 </li>
             {% endif %}

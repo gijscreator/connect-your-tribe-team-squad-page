@@ -10,7 +10,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 100%; 
+    width: 100%;
     padding: .5rem;
     background-color: var(--primary-cinema);
     position: sticky;
@@ -42,10 +42,10 @@ header {
             color: white;
             text-decoration: none;
             width: auto;
-            
+
             @media (min-width: 700px) {
                 width: auto;
-                order: 1; 
+                order: 1;
             }
 
             &:last-of-type {
@@ -67,10 +67,10 @@ header {
     }
 
     form {
-        
+
         --inline-padding: 1rem;
         --icon-size: 1.2rem;
-    
+
         font-size: 1rem;
         display: flex;
         align-items: center;
@@ -78,7 +78,7 @@ header {
 
         @media (min-width: 700px) {
             width: 100%;
-            max-width: 400px; 
+            max-width: 400px;
             order: 2;
         }
 
@@ -89,7 +89,8 @@ header {
             align-items: center;
             background-color: white;
             border-radius: 50px;
-            border: 1px solid #eee; /* Optional: adds definition */
+            border: 1px solid #eee;
+            /* Optional: adds definition */
             padding: 0.5rem var(--inline-padding);
             transition: box-shadow 0.2s ease;
             font-size: 1rem;
@@ -114,20 +115,20 @@ header {
                 color: #333;
                 font-size: 1rem;
 
-            &:focus {
-                outline: none;
-            }
+                &:focus {
+                    outline: none;
+                }
 
-            &::placeholder {
-                color: #999;
-                font-size: .8rem;
-            }
+                &::placeholder {
+                    color: #999;
+                    font-size: .8rem;
+                }
 
-            &:-webkit-autofill {
-                -webkit-box-shadow: 0 0 0px 1000px white inset;
+                &:-webkit-autofill {
+                    -webkit-box-shadow: 0 0 0px 1000px white inset;
+                }
             }
         }
-    }
     }
 }
 
@@ -139,8 +140,8 @@ main {
 
 /* Global main styles */
 main:not(.cart) {
-	margin-top: 3dvh;
-	padding: 1rem;
+    margin-top: 3dvh;
+    padding: 1rem;
 
     @media (min-width: 789px) {
         padding: 3rem;
@@ -163,9 +164,9 @@ main:has(section.cardlayout) {
         justify-content: space-between;
         position: absolute;
         width: 100%;
-        top: 0; 
+        top: 0;
         left: 0;
-        height: 100%; 
+        height: 100%;
         z-index: -1;
         pointer-events: none;
 
@@ -175,13 +176,14 @@ main:has(section.cardlayout) {
 
         img {
             position: sticky;
-            top: 15dvh; 
+            top: 15dvh;
             width: 10vw;
             height: auto;
             z-index: 2;
         }
-        
-        div.taperollsleft, div.taperollsright {
+
+        div.taperollsleft,
+        div.taperollsright {
             position: relative;
             width: 10vw;
             height: 100%;
@@ -190,29 +192,32 @@ main:has(section.cardlayout) {
                 position: absolute;
                 bottom: 0;
                 width: 9.5vw;
-                height: 97%; 
-                background-color: #1a1a1a; 
-                background-image: 
+                height: 97%;
+                background-color: #1a1a1a;
+                background-image:
                     radial-gradient(circle, #fff 50%, transparent 50%),
                     radial-gradient(circle, #fff 50%, transparent 50%);
-                background-size: 1.5vw 1.5vw; 
-                background-position: 10% 0, 90% 0; 
+                background-size: 1.5vw 1.5vw;
+                background-position: 10% 0, 90% 0;
                 background-repeat: repeat-y;
             }
         }
 
-        .taperollsleft .film-tape-css { 
-            left: 0; 
+        .taperollsleft .film-tape-css {
+            left: 0;
         }
 
-        .taperollsright .film-tape-css { 
-            right: 0; 
+        .taperollsright .film-tape-css {
+            right: 0;
         }
     }
 }
 
 /* student page individual main styles */
 main.student {
+
+    margin-bottom: var(--space-margin);
+    color: var(--button-bg-offwhite);
 
     section:nth-of-type(2) {
 
@@ -223,9 +228,8 @@ main.student {
         article {
             display: flex;
             background-color: black;
-            color: white;
             border-radius: 2rem;
-            position: relative; 
+            position: relative;
             overflow: hidden;
 
             img {
@@ -277,7 +281,7 @@ main.student {
                     @media (min-width: 700px) {
                         display: none;
                     }
-                    
+
                 }
             }
         }
@@ -294,7 +298,6 @@ main.student {
             flex-direction: column;
             align-items: center;
             position: relative;
-            color: black;
             border-radius: 2rem;
 
             @media (min-width: 700px) {
@@ -317,6 +320,7 @@ main.student {
                 margin: 0rem;
                 margin-bottom: 1rem;
                 z-index: 2;
+                color: var(--button-bg-biege);
             }
 
             p {
@@ -337,22 +341,36 @@ main.student {
                     @media (min-width: 700px) {
                         display: none;
                     }
-                    
+
                 }
             }
         }
     }
 
-    iframe {
-        margin-top: 3rem;4
+    section:nth-of-type(4) {
+
+        img {
+            height: 5rem;
+            margin: 0 0 -5.5rem 33rem;
+        }
+
+        div h3 {
+            color: var(--button-bg-biege);
+        }
     }
-    
+
+    iframe {
+        margin-top: 3rem;
+        box-shadow: var(--black) 0 4px 9px;
+        margin-bottom: var(--space-margin);
+    }
+
     embed {
         margin: 4rem 0;
-        width:100%; 
+        width: 100%;
         height: 100dvh;
     }
-    
+
 }
 
 main.search {
@@ -414,9 +432,7 @@ main.berichten {
         transition: all .3s ease;
 
         li {
-            p {
-                
-            }
+            p {}
         }
     }
 }
@@ -450,16 +466,16 @@ div.badges {
 }
 
 div.curtains {
-    
+
     img {
         width: 50vw;
         height: 120dvh;
         position: fixed;
         top: 0;
         z-index: 100;
-        
-        animation-fill-mode: forwards; 
-        animation-duration: 1.2s; 
+
+        animation-fill-mode: forwards;
+        animation-duration: 1.2s;
         animation-timing-function: ease-in;
     }
 
@@ -478,13 +494,23 @@ div.curtains {
 
 
 @keyframes slide-left {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); } 
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 @keyframes slide-right {
-    from { transform: translateX(0); }
-    to { transform: translateX(100%); }
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
 }
 
 /* card design universal */
@@ -496,7 +522,7 @@ section.cardlayout {
         grid-template-columns: 1fr;
         gap: 2vw;
         color: #ffffff;
-        
+
 
         @media (min-width: 650px) {
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -519,20 +545,21 @@ section.cardlayout {
         border: 2px var(--white) solid;
         background-color: var(--primary-cinema);
         border-radius: var(--border-medium);
-        margin-bottom: 1rem; position: relative;
+        margin-bottom: 1rem;
+        position: relative;
         position: relative;
         transition: all .3s ease;
 
         &::before {
             content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: radial-gradient(
-                circle at var(--mouse-x) var(--mouse-y), 
-                rgba(255, 255, 255, 0.693) 0%, 
-                transparent 30%
-            );
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at var(--mouse-x) var(--mouse-y),
+                    rgba(255, 255, 255, 0.693) 0%,
+                    transparent 30%);
             pointer-events: none;
             opacity: 0;
             transition: opacity 0.3s;
@@ -587,7 +614,7 @@ section.cardlayout {
 /* individual design universal */
 section.individual {
 
-    display: flex; 
+    display: flex;
     flex-direction: column;
 
     @media (min-width: 789px) {
@@ -671,11 +698,11 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; 
+    pointer-events: none;
     z-index: 1;
 }
 
-    
+
 .flake {
     position: absolute;
     top: -14vh;
@@ -702,6 +729,7 @@ footer {
 .flake:nth-child(3n)::before {
     content: "❆";
 }
+
 .flake:nth-child(3n + 2)::before {
     content: "❅";
 }
@@ -713,12 +741,14 @@ footer {
     --blur: 1.2px;
     --driftDur: 10s;
 }
+
 .snow--mid .flake {
     --size: clamp(12px, 1.4vw, 18px);
     --opacity: 0.42;
     --blur: 0.55px;
     --driftDur: 8s;
 }
+
 .snow--near .flake {
     --size: clamp(16px, 2vw, 28px);
     --opacity: 0.7;
@@ -731,6 +761,7 @@ footer {
     from {
         transform: translate3d(0, 0, 0);
     }
+
     to {
         transform: translate3d(0, 132vh, 0);
     }
@@ -740,18 +771,22 @@ footer {
     0% {
         transform: translateX(0) rotate(0turn);
     }
+
     35% {
         transform: translateX(calc(var(--drift, 40px) * -0.6)) rotate(0.35turn);
     }
+
     70% {
         transform: translateX(var(--drift, 40px)) rotate(0.75turn);
     }
+
     100% {
         transform: translateX(0) rotate(1turn);
     }
 }
 
 @media (max-width: 480px) {
+
     .snow--far .flake:nth-child(n + 11),
     .snow--mid .flake:nth-child(n + 11),
     .snow--near .flake:nth-child(n + 11) {
@@ -763,6 +798,7 @@ footer {
     .flake {
         animation: none;
     }
+
     .flake::before {
         animation: none;
         opacity: 0.25;

@@ -2,7 +2,7 @@
 {% include 'partials/calc.liquid' %}
 {% include 'partials/vars.liquid' %}
 
-<a href="/">Back</a>
+<a href="/" class="beige">Back</a>
 
 <main class="student">
 {% include 'partials/overlay.liquid' %}
@@ -69,6 +69,7 @@
             <span class="flake" style="--x:94; --fall:12.2s; --delay:-9s; --drift:6.9vw;"></span>
             <span class="flake" style="--x:98; --fall:10.8s; --delay:-5s; --drift:7.1vw;"></span>
         </div>
+
 
         <img src="/assets/{{ person.fav_season }}.webp" alt="">
 
@@ -203,12 +204,6 @@
         <embed src="{{ person.website }}">
     {% endif %}
 </section>
-
-<section>
-    <img src="/assets/virm3.png" alt="">
-    <img src="/assets/virm4.png" alt="">
-</section>
-
 
 </main>
 

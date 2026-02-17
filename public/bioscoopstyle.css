@@ -4,8 +4,20 @@ body {
 
 article {
     section {
+        width: 80%;
+        justify-self: center;
+
         &:nth-child(1) {
             background-color: var(--secondary);
+            display: grid;
+            padding: 1em;
+
+            @media (min-width: 700px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            div {
+
                 a {
                     display: block;
                     color: var(--primary-cinema);

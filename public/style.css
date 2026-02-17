@@ -221,6 +221,10 @@ main.student {
 
     margin-bottom: var(--space-margin);
     color: var(--button-bg-offwhite);
+    background-image: url(/assets/filmroll-detail.png);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: -48.5rem -10rem;
 
     a {
         color: var(--button-bg-biege);
@@ -238,13 +242,12 @@ main.student {
             overflow: hidden;
 
             img {
-                opacity: .8;
                 border-radius: 2rem;
                 object-fit: cover;
                 object-position: 70%;
                 height: 30dvh;
                 box-shadow: var(--black) 0 4px 9px;
-                
+
 
                 @media (min-width: 700px) {
                     height: 70dvh;
@@ -307,12 +310,16 @@ main.student {
             position: relative;
             border-radius: 2rem;
             box-shadow: var(--black) 0 4px 9px;
-            margin-bottom: var(--space-margin) ;
+            margin-bottom: var(--space-margin);
             height: 23rem;
             padding-left: var(--reg-padding);
             background-size: cover;
             background-position: top;
             background-repeat: no-repeat;
+
+            &:hover {
+                translate: 0 -1rem;
+            }
 
             @media (min-width: 700px) {
                 display: grid;
@@ -373,9 +380,13 @@ main.student {
         margin-top: 3rem;
         box-shadow: var(--black) 0 4px 9px;
         margin-bottom: var(--space-margin);
+
+        &:hover {
+            translate: 0 -1rem;
+        }
     }
 
-    
+
 
     embed {
         margin: 4rem 0;
@@ -676,6 +687,21 @@ section.individual {
         text-decoration: line-through;
         font-style: italic;
     }
+
+    button {
+        text-decoration: none;
+        margin-bottom: 1rem;
+        padding: .5rem;
+        border-radius: var(--border-small);
+        border: solid var(--primary-cinema);
+        background-color: var(--button-bg-biege);
+        color: var(--button-text);
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(1.2);
+        }
+    }
 }
 
 footer {
@@ -684,7 +710,7 @@ footer {
     justify-content: flex-start;
     background-color: var(--primary-cinema);
     box-shadow: var(--black) 0 1px 9px;
-    filter:brightness(1.3);
+    filter: brightness(1.3);
     width: 100%;
     height: 10%;
     position: fixed;

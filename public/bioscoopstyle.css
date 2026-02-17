@@ -28,7 +28,11 @@ article {
                     }
                 }
 
-                img:nth-of-type(1) {
+                img {
+                    width: 30em;
+                }
+
+                .mugshot {
                     width: 12em;
                     height: auto;
                 }

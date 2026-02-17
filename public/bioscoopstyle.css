@@ -28,7 +28,11 @@ article {
                     }
                 }
 
-                img:nth-of-type(1) {
+                img {
+                    width: 30em;
+                }
+
+                .mugshot {
                     width: 12em;
                     height: auto;
                 }
@@ -90,7 +94,6 @@ article {
         &:nth-child(2) {
             padding-block: 1em;
             display: grid;
-            gap: 5px;
             width: 100%;
             padding-inline: 3vw;
 

@@ -10,29 +10,28 @@
 </head>
 <body>
 	<header>
-	
-	<section>
-		<h1 class="vs-hidden">{{ title }}</h1>
-		<a href="/">
-			<img src="/assets/fdnd-cinema.png" alt="fdnd shop logo">
-		</a>
+		<section>
+			<h1 class="vs-hidden">{{ title }}</h1>
+			<a href="/">
+				<img src="/assets/fdnd-cinema.png" alt="fdnd shop logo">
+			</a>
 
-		<a href="/cart">
-			<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M2.08398 2.08334H10.4173L16.0007 29.9792C16.1912 30.9383 16.713 31.7999 17.4747 32.4131C18.2364 33.0263 19.1896 33.3521 20.1673 33.3333H40.4173C41.395 33.3521 42.3482 33.0263 43.1099 32.4131C43.8717 31.7999 44.3935 30.9383 44.584 29.9792L47.9173 12.5H12.5007M20.834 43.75C20.834 44.9006 19.9012 45.8333 18.7507 45.8333C17.6001 45.8333 16.6673 44.9006 16.6673 43.75C16.6673 42.5994 17.6001 41.6667 18.7507 41.6667C19.9012 41.6667 20.834 42.5994 20.834 43.75ZM43.7506 43.75C43.7506 44.9006 42.8179 45.8333 41.6673 45.8333C40.5167 45.8333 39.584 44.9006 39.584 43.75C39.584 42.5994 40.5167 41.6667 41.6673 41.6667C42.8179 41.6667 43.7506 42.5994 43.7506 43.75Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+			<a href="/cart">
+				<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M2.08398 2.08334H10.4173L16.0007 29.9792C16.1912 30.9383 16.713 31.7999 17.4747 32.4131C18.2364 33.0263 19.1896 33.3521 20.1673 33.3333H40.4173C41.395 33.3521 42.3482 33.0263 43.1099 32.4131C43.8717 31.7999 44.3935 30.9383 44.584 29.9792L47.9173 12.5H12.5007M20.834 43.75C20.834 44.9006 19.9012 45.8333 18.7507 45.8333C17.6001 45.8333 16.6673 44.9006 16.6673 43.75C16.6673 42.5994 17.6001 41.6667 18.7507 41.6667C19.9012 41.6667 20.834 42.5994 20.834 43.75ZM43.7506 43.75C43.7506 44.9006 42.8179 45.8333 41.6673 45.8333C40.5167 45.8333 39.584 44.9006 39.584 43.75C39.584 42.5994 40.5167 41.6667 41.6673 41.6667C42.8179 41.6667 43.7506 42.5994 43.7506 43.75Z" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+				</svg>
+				Cart
+			</a>
+		</section>
+
+		<form action="/search" method="POST">
+			<label for="search-input">
+			<svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<circle cx="11" cy="11" r="8"></circle>
+				<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
 			</svg>
-			Cart
-		</a>
-	</section>
-
-	<form action="/search" method="POST">
-		<label for="search-input">
-		<svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-			<circle cx="11" cy="11" r="8"></circle>
-			<line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-		</svg>
-		
-		<input type="search" name="search" id="search-input" placeholder="Zoek hier naar iemand (koop)..." value="{{ q }}">
-		</label>
-	</form>
+			
+			<input type="search" name="search" id="search-input" placeholder="Zoek hier naar iemand (koop)..." value="{{ q }}">
+			</label>
+		</form>
 	</header>  

@@ -17,11 +17,23 @@ header {
     top: 0;
     z-index: 100;
 
+    @media (min-width: 700px) {
+        flex-direction: row;
+        padding: 0.5rem 2rem;
+        gap: 2rem;
+    }
+
     section {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100vw;
+        padding: 0 .5rem;
+
+        @media (min-width: 700px) {
+            width: auto;
+            display: contents;
+        }
 
         a {
             display: flex;
@@ -29,14 +41,25 @@ header {
             flex-direction: column;
             color: white;
             text-decoration: none;
-            width: 15vw;
+            width: auto;
+            
+            @media (min-width: 700px) {
+                width: auto;
+                order: 1; 
+            }
+
+            &:last-of-type {
+                @media (min-width: 700px) {
+                    order: 3;
+                }
+            }
 
             svg {
                 width: 2.5rem;
             }
 
             img {
-                width: 15vw;
+                width: 25vw;
                 max-width: 150px;
                 height: auto;
             }
@@ -54,7 +77,9 @@ header {
         width: 80%;
 
         @media (min-width: 700px) {
-            position: static;
+            width: 100%;
+            max-width: 400px; 
+            order: 2;
         }
 
         label {
@@ -127,14 +152,14 @@ main:not(.cart) {
 }
 
 main:has(section.cardlayout) {
-    @media (min-width: 1089px) {
+    @media (min-width: 700px) {
         width: 80%;
         margin: 0 auto;
         padding: 1rem;
     }
 
     section.taperollwrapper {
-        display: flex;
+        display: none;
         justify-content: space-between;
         position: absolute;
         width: 100%;
@@ -144,10 +169,15 @@ main:has(section.cardlayout) {
         z-index: -1;
         pointer-events: none;
 
+        @media (min-width: 700px) {
+            display: flex;
+        }
+
         img {
             position: sticky;
             top: 15dvh; 
             width: 10vw;
+            height: auto;
             z-index: 2;
         }
         
@@ -158,9 +188,9 @@ main:has(section.cardlayout) {
 
             div {
                 position: absolute;
-                top: 0;
-                width: 10vw;
-                height: 100%; 
+                bottom: 0;
+                width: 9.5vw;
+                height: 97%; 
                 background-color: #1a1a1a; 
                 background-image: 
                     radial-gradient(circle, #fff 50%, transparent 50%),
@@ -341,9 +371,6 @@ body.cart {
 }
 
 main.cart {
-    display: flex;
-    flex-direction: row;
-    flex: 3;
 
     section {
 
@@ -404,7 +431,10 @@ aside.cart {
 /* badges for all pages */
 div.badges {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: .6rem;
+    padding: 1rem;
+    justify-content: flex-start;
     margin-top: var(--reg-margin);
 
     p {
@@ -470,10 +500,12 @@ section.cardlayout {
 
         @media (min-width: 650px) {
             grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5vw;
         }
 
         @media (min-width: 1089px) {
             grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1vw;
         }
 
         @media (min-width: 1700px) {
@@ -489,6 +521,7 @@ section.cardlayout {
         border-radius: var(--border-medium);
         margin-bottom: 1rem; position: relative;
         position: relative;
+        transition: all .3s ease;
 
         &::before {
             content: '';
@@ -507,6 +540,18 @@ section.cardlayout {
 
         &:hover::before {
             opacity: 1;
+        }
+
+        &:hover {
+            scale: 1.02;
+        }
+
+        &:nth-child(odd):hover {
+            rotate: 3deg;
+        }
+
+        &:nth-child(even):hover {
+            rotate: -3deg;
         }
 
         @media (min-width: 550px) {

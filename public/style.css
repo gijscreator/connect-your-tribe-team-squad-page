@@ -219,9 +219,11 @@ main.student {
     margin-bottom: var(--space-margin);
     color: var(--button-bg-offwhite);
 
-    section:nth-of-type(2) {
+    a {
+        color: var(--button-bg-biege);
+    }
 
-        background-image: url();
+    section:nth-of-type(2) {
 
         h3 {
             margin: 5rem 0 2rem 0;
@@ -229,17 +231,17 @@ main.student {
 
         article {
             display: flex;
-            background-color: black;
-            border-radius: 2rem;
             position: relative;
             overflow: hidden;
 
             img {
-                opacity: .5;
+                opacity: .8;
                 border-radius: 2rem;
                 object-fit: cover;
                 object-position: 70%;
                 height: 30dvh;
+                box-shadow: var(--black) 0 4px 9px;
+                
 
                 @media (min-width: 700px) {
                     height: 70dvh;
@@ -301,6 +303,8 @@ main.student {
             align-items: center;
             position: relative;
             border-radius: 2rem;
+            box-shadow: var(--black) 0 4px 9px;
+            margin-bottom: var(--space-margin) ;
             height: 23rem;
             padding-left: var(--reg-padding);
             background-size: cover;
@@ -367,6 +371,8 @@ main.student {
         box-shadow: var(--black) 0 4px 9px;
         margin-bottom: var(--space-margin);
     }
+
+    
 
     embed {
         margin: 4rem 0;

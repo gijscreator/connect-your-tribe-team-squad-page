@@ -6,6 +6,16 @@ article {
     section {
         &:nth-child(1) {
             background-color: var(--secondary);
+                a {
+                    display: block;
+                    color: var(--primary-cinema);
+                    text-decoration: none;
+                    width: fit-content;
+
+                    &:hover {
+                        color: var(--button-bg-biege);
+                    }
+                }
                 form {
                     label {
                         display: flex;

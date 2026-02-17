@@ -6,12 +6,55 @@ article {
     section {
         &:nth-child(1) {
             background-color: var(--secondary);
+                        input {
+                            --size: clamp(3em, 4em, 10vw);
+                            --mask: conic-gradient(from -18deg at 61% 34.5%, #0000 108deg, #000 0) 0 / var(--size),
+                                conic-gradient(from 270deg at 39% 34.5%, #0000 108deg, #000 0) 0 / var(--size),
+                                conic-gradient(from 54deg at 68% 56%, #0000 108deg, #000 0) 0 / var(--size),
+                                conic-gradient(from 198deg at 32% 56%, #0000 108deg, #000 0) 0 / var(--size),
+                                conic-gradient(from 126deg at 50% 69%, #0000 108deg, #000 0) 0 / var(--size);
+                            --bg: linear-gradient(90deg, #946F18 calc(var(--size) * var(--val)), #000 0);
+                            height: var(--size);
+                            width: calc(var(--size) * 5);
+                            border: 0;
+                            /* Firefox adds a default border to ranges */
+                            -webkit-appearance: none;
+                            appearance: none;
+
+                            /* Chrome and Safari */
+                            &::-webkit-slider-runnable-track {
+                                height: 100%;
+                                mask: var(--mask);
+                                mask-composite: intersect;
+                                background: var(--bg);
+                                -webkit-print-color-adjust: exact;
+                                print-color-adjust: exact;
+                            }
+
+                            &::-webkit-slider-thumb {
+                                opacity: 0;
+                            }
+
+                            /* Firefox */
+                            &::-moz-range-track {
+                                height: 100%;
+                                mask: var(--mask);
+                                mask-composite: intersect;
+                                background: var(--bg);
+                                print-color-adjust: exact;
+                            }
+
+                            &::-moz-range-thumb {
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         &:nth-child(2) {
             padding-block: 1em;
-            width: 80%;
-            justify-self: center;
             display: grid;
             gap: 5px;
 

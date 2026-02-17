@@ -16,6 +16,12 @@ article {
                         color: var(--button-bg-biege);
                     }
                 }
+
+                img:nth-of-type(1) {
+                    width: 12em;
+                    height: auto;
+                }
+
                 form {
                     label {
                         display: flex;

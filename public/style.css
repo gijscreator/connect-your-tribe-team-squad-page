@@ -221,6 +221,8 @@ main.student {
 
     section:nth-of-type(2) {
 
+        background-image: url();
+
         h3 {
             margin: 5rem 0 2rem 0;
         }
@@ -299,17 +301,16 @@ main.student {
             align-items: center;
             position: relative;
             border-radius: 2rem;
+            height: 23rem;
+            padding-left: var(--reg-padding);
+            background-size: cover;
+            background-position: top;
+            background-repeat: no-repeat;
 
             @media (min-width: 700px) {
                 display: grid;
                 grid-template-areas: "content media";
                 justify-items: center;
-            }
-
-            img {
-                width: 60%;
-                height: auto;
-                grid-area: media;
             }
 
             div:nth-of-type(1) {
@@ -348,6 +349,8 @@ main.student {
     }
 
     section:nth-of-type(4) {
+
+        margin-bottom: var(--space-margin);
 
         img {
             height: 5rem;

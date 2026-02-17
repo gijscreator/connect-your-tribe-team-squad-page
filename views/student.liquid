@@ -13,65 +13,7 @@
 <section>
     <h3>Mijn favoriete seizoen:</h3>
 
-    <article>
-    <!-- Snowfall animation ( very cool) -->
-
-        <!-- Snowfall far -->
-        <div class="snow snow--far" aria-hidden="true">
-            <span class="flake" style="--x:4;  --fall:28s; --delay:-22s; --drift:2.0vw;"></span>
-            <span class="flake" style="--x:12; --fall:26s; --delay:-8s;  --drift:2.5vw;"></span>
-            <span class="flake" style="--x:19; --fall:30s; --delay:-18s; --drift:1.6vw;"></span>
-            <span class="flake" style="--x:27; --fall:25s; --delay:-14s; --drift:2.2vw;"></span>
-            <span class="flake" style="--x:33; --fall:29s; --delay:-26s; --drift:1.8vw;"></span>
-            <span class="flake" style="--x:41; --fall:27s; --delay:-10s; --drift:2.6vw;"></span>
-            <span class="flake" style="--x:48; --fall:31s; --delay:-16s; --drift:1.7vw;"></span>
-            <span class="flake" style="--x:56; --fall:26s; --delay:-20s; --drift:2.4vw;"></span>
-            <span class="flake" style="--x:63; --fall:30s; --delay:-12s; --drift:1.9vw;"></span>
-            <span class="flake" style="--x:71; --fall:28s; --delay:-24s; --drift:2.3vw;"></span>
-            <span class="flake" style="--x:83; --fall:32s; --delay:-28s; --drift:1.5vw;"></span>
-            <span class="flake" style="--x:92; --fall:27s; --delay:-6s;  --drift:2.1vw;"></span>
-            <span class="flake" style="--x:97; --fall:29s; --delay:-19s; --drift:1.8vw;"></span>
-            <span class="flake" style="--x:76; --fall:31s; --delay:-15s; --drift:2.0vw;"></span>
-        </div>
-
-        <!-- Snowfall mid -->
-        <div class="snow snow--mid" aria-hidden="true">
-            <span class="flake" style="--x:2;  --fall:18s; --delay:-11s; --drift:3.2vw;"></span>
-            <span class="flake" style="--x:9;  --fall:17s; --delay:-4s;  --drift:3.8vw;"></span>
-            <span class="flake" style="--x:16; --fall:20s; --delay:-15s; --drift:3.0vw;"></span>
-            <span class="flake" style="--x:24; --fall:16s; --delay:-9s;  --drift:4.2vw;"></span>
-            <span class="flake" style="--x:31; --fall:19s; --delay:-17s; --drift:3.6vw;"></span>
-            <span class="flake" style="--x:38; --fall:18s; --delay:-6s;  --drift:4.0vw;"></span>
-            <span class="flake" style="--x:46; --fall:21s; --delay:-13s; --drift:3.1vw;"></span>
-            <span class="flake" style="--x:53; --fall:17s; --delay:-12s; --drift:4.4vw;"></span>
-            <span class="flake" style="--x:61; --fall:20s; --delay:-7s;  --drift:3.5vw;"></span>
-            <span class="flake" style="--x:68; --fall:16s; --delay:-5s;  --drift:4.6vw;"></span>
-            <span class="flake" style="--x:74; --fall:19s; --delay:-14s; --drift:3.3vw;"></span>
-            <span class="flake" style="--x:82; --fall:18s; --delay:-10s; --drift:4.1vw;"></span>
-            <span class="flake" style="--x:90; --fall:21s; --delay:-18s; --drift:3.2vw;"></span>
-            <span class="flake" style="--x:96; --fall:17s; --delay:-8s;  --drift:4.3vw;"></span>
-        </div>
-
-        <!-- Snowfall near -->
-        <div class="snow snow--near" aria-hidden="true">
-            <span class="flake" style="--x:6;  --fall:11s; --delay:-9s;  --drift:6.0vw;"></span>
-            <span class="flake" style="--x:13; --fall:10s; --delay:-2s;  --drift:7.0vw;"></span>
-            <span class="flake" style="--x:22; --fall:12s; --delay:-7s;  --drift:6.5vw;"></span>
-            <span class="flake" style="--x:29; --fall:9s;  --delay:-5s;  --drift:7.6vw;"></span>
-            <span class="flake" style="--x:36; --fall:13s; --delay:-11s; --drift:6.2vw;"></span>
-            <span class="flake" style="--x:44; --fall:10.5s; --delay:-8s; --drift:7.2vw;"></span>
-            <span class="flake" style="--x:52; --fall:11.5s; --delay:-4s; --drift:6.8vw;"></span>
-            <span class="flake" style="--x:59; --fall:9.8s;  --delay:-10s;--drift:7.9vw;"></span>
-            <span class="flake" style="--x:66; --fall:12.8s; --delay:-6s; --drift:6.4vw;"></span>
-            <span class="flake" style="--x:73; --fall:10.2s; --delay:-3s; --drift:7.4vw;"></span>
-            <span class="flake" style="--x:81; --fall:11.8s; --delay:-12s;--drift:6.6vw;"></span>
-            <span class="flake" style="--x:88; --fall:9.6s;  --delay:-7s; --drift:8.2vw;"></span>
-            <span class="flake" style="--x:94; --fall:12.2s; --delay:-9s; --drift:6.9vw;"></span>
-            <span class="flake" style="--x:98; --fall:10.8s; --delay:-5s; --drift:7.1vw;"></span>
-        </div>
-
-
-        <img src="/assets/{{ person.fav_season }}.webp" alt="">
+    <article style="background-image: url('/assets/{{ person.fav_season }}-background2.png');">
 
         <div>  
             <h3>{{ person.fav_season }}</h3>
@@ -200,7 +142,7 @@
 
 <section>
     {% if person.website %}
-        <h3>Mijn website</h3>
+        <h3>Mijn website:</h3>
         <embed src="{{ person.website }}">
     {% endif %}
 </section>

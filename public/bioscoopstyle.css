@@ -6,6 +6,13 @@ article {
     section {
         &:nth-child(1) {
             background-color: var(--secondary);
+                form {
+                    label {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1em;
+                        font-size: var(--paragraph);
+
                         input {
                             --size: clamp(3em, 4em, 10vw);
                             --mask: conic-gradient(from -18deg at 61% 34.5%, #0000 108deg, #000 0) 0 / var(--size),

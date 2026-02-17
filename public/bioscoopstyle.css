@@ -1,3 +1,20 @@
 body {
     background-color: var(--background-primary);
 }
+
+article {
+    section {
+        &:nth-child(1) {
+            background-color: var(--secondary);
+        }
+
+        &:nth-child(2) {
+            padding-block: 1em;
+            width: 80%;
+            justify-self: center;
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            gap: 5px;
+        }
+    }
+}

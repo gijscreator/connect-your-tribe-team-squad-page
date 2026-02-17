@@ -13,8 +13,19 @@ article {
             width: 80%;
             justify-self: center;
             display: grid;
-            grid-template-columns: repeat(8, 1fr);
             gap: 5px;
+
+            @media (min-width: 700px) {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            @media (min-width: 800px) {
+                grid-template-columns: repeat(8, 1fr);
+            }
+
+            @media (min-width: 1200px) {
+                grid-template-columns: repeat(10, 1fr);
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 {% include 'partials/calc.liquid' %}
 {% include 'partials/vars.liquid' %}
 
-<a href="/" class="beige">Back</a>
+<a href="/">Back</a>
 
 <main class="student">
 {% include 'partials/overlay.liquid' %}
@@ -46,6 +46,9 @@
 </section>
 
 {% comment %} bron: https://developer.spotify.com/documentation/embeds/tutorials/creating-an-embed {% endcomment %}
+
+<h3>Mijn favoriete nummer:</h3>
+
 <iframe
     style="border-radius:2rem"
     src="https://open.spotify.com/embed/track/{{ track_id | default: '4PTG3Z6ehGkBFwjybzWkR8' }}?utm_source=generator"

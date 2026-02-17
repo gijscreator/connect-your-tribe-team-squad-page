@@ -14,6 +14,7 @@ header {
     width: 100%;
     padding: .5rem;
     background-color: var(--primary-cinema);
+    box-shadow: var(--black) 0 4px 9px;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -47,6 +48,7 @@ header {
             @media (min-width: 700px) {
                 width: auto;
                 order: 1;
+                margin-left: -2rem;
             }
 
             &:last-of-type {
@@ -81,6 +83,7 @@ header {
             width: 100%;
             max-width: 400px;
             order: 2;
+            margin-left: -7rem;
         }
 
         label {
@@ -225,10 +228,16 @@ main.student {
 
     margin-bottom: var(--space-margin);
     color: var(--button-bg-offwhite);
+    background-image: url(/assets/filmroll-detail.png);
+    background-repeat: no-repeat;
+    background-size: 200%;
+    background-position: -48.5rem -10rem;
+
+    a {
+        color: var(--button-bg-biege);
+    }
 
     section:nth-of-type(2) {
-
-        background-image: url();
 
         h3 {
             margin: 5rem 0 2rem 0;
@@ -236,17 +245,16 @@ main.student {
 
         article {
             display: flex;
-            background-color: black;
-            border-radius: 2rem;
             position: relative;
             overflow: hidden;
 
             img {
-                opacity: .5;
                 border-radius: 2rem;
                 object-fit: cover;
                 object-position: 70%;
                 height: 30dvh;
+                box-shadow: var(--black) 0 4px 9px;
+
 
                 @media (min-width: 700px) {
                     height: 70dvh;
@@ -308,11 +316,17 @@ main.student {
             align-items: center;
             position: relative;
             border-radius: 2rem;
+            box-shadow: var(--black) 0 4px 9px;
+            margin-bottom: var(--space-margin);
             height: 23rem;
             padding-left: var(--reg-padding);
             background-size: cover;
             background-position: top;
             background-repeat: no-repeat;
+
+            &:hover {
+                translate: 0 -1rem;
+            }
 
             @media (min-width: 700px) {
                 display: grid;
@@ -373,7 +387,13 @@ main.student {
         margin-top: 3rem;
         box-shadow: var(--black) 0 4px 9px;
         margin-bottom: var(--space-margin);
+
+        &:hover {
+            translate: 0 -1rem;
+        }
     }
+
+
 
     embed {
         margin: 4rem 0;
@@ -696,6 +716,21 @@ section.individual {
         text-decoration: line-through;
         font-style: italic;
     }
+
+    button {
+        text-decoration: none;
+        margin-bottom: 1rem;
+        padding: .5rem;
+        border-radius: var(--border-small);
+        border: solid var(--primary-cinema);
+        background-color: var(--button-bg-biege);
+        color: var(--button-text);
+        cursor: pointer;
+
+        &:hover {
+            filter: brightness(1.2);
+        }
+    }
 }
 
 footer {
@@ -703,9 +738,12 @@ footer {
     align-items: flex-start;
     justify-content: flex-start;
     background-color: var(--primary-cinema);
+    box-shadow: var(--black) 0 1px 9px;
+    filter: brightness(1.3);
     width: 100%;
+    height: 10%;
     position: fixed;
-    padding: 1rem .5rem;
+    padding: .5rem .5rem;
     bottom: 0;
     left: 0;
 
@@ -834,25 +872,5 @@ footer {
     .flake::before {
         animation: none;
         opacity: 0.25;
-    }
-}
-
-@keyframes slide-left {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes slide-right {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(100%);
     }
 }

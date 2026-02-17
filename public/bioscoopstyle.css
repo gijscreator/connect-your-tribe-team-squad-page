@@ -4,7 +4,6 @@ body {
 
 article {
     section {
-        width: 80%;
         justify-self: center;
 
         &:nth-child(1) {
@@ -92,6 +91,8 @@ article {
             padding-block: 1em;
             display: grid;
             gap: 5px;
+            width: 100%;
+            padding-inline: 3vw;
 
             @media (min-width: 700px) {
                 grid-template-columns: repeat(6, 1fr);
@@ -102,7 +103,11 @@ article {
             }
 
             @media (min-width: 1200px) {
-                grid-template-columns: repeat(10, 1fr);
+                grid-template-columns: repeat(12, 1fr);
+            }
+
+            @media (min-width: 2000px) {
+                grid-template-columns: repeat(16, 1fr);
             }
         }
     }

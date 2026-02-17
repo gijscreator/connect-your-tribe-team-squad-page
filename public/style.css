@@ -1,5 +1,6 @@
 body {
     background-color: var(--background-primary);
+    overflow-x: hidden;
     position: relative;
 }
 
@@ -153,10 +154,16 @@ main:not(.cart) {
 }
 
 main:has(section.cardlayout) {
+    display: flex;
+
     @media (min-width: 700px) {
         width: 80%;
         margin: 0 auto;
         padding: 1rem;
+    }
+
+    &:has(aside.filter.open) {
+        width: 60%
     }
 
     section.taperollwrapper {
@@ -385,9 +392,19 @@ main.search {
 body.cart {
     display: flex;
     flex-wrap: wrap;
+    gap: 20px;
 
     header {
         flex: 0 0 100%;
+    }
+
+    main {
+        flex: 1; 
+        min-width: 30vw;
+    }
+
+    aside {
+        flex: 0 0 30vw; 
     }
 }
 
@@ -447,6 +464,16 @@ aside.cart {
     background-color: purple;
 }
 
+aside.filter {
+    display: none;
+    width: 10%;
+    height: 100%;
+
+    &.open {
+        display: flex;
+    }
+}
+
 /* badges for all pages */
 div.badges {
     display: flex;
@@ -493,31 +520,33 @@ div.curtains {
     }
 }
 
-
-
-
-@keyframes slide-left {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes slide-right {
-    from {
-        transform: translateX(0);
-    }
-
-    to {
-        transform: translateX(100%);
-    }
-}
-
 /* card design universal */
 section.cardlayout {
+
+    article {
+        display: flex;
+        justify-content: space-around;
+
+        details:nth-of-type(1) {
+            width: 20vw; 
+            height: fit-content;
+            background-color: white;
+
+            &:open {
+
+            }
+        }
+
+        details:nth-of-type(2) {
+            width: 20vw; 
+            height: fit-content;
+            background-color: white;
+
+            &:open {
+
+            }
+        }
+    }
 
     ul {
         display: grid;
@@ -805,5 +834,25 @@ footer {
     .flake::before {
         animation: none;
         opacity: 0.25;
+    }
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide-right {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(100%);
     }
 }

@@ -33,3 +33,10 @@ cards.forEach(card => {
         card.style.setProperty('--mouse-y', `${y}px`);
     });
 });
+
+const filter = document.querySelector(".filter");
+const showfilters = document.querySelector(".filterbutton")
+
+showfilters.addEventListener('click', () => {
+    filter.classList.toggle("open");
+});

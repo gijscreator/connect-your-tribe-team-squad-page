@@ -42,3 +42,4 @@ showfilters.addEventListener('click', () => {
         filterDesktop.classList.toggle("open");
     } 
 });
+

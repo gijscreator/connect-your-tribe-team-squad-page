@@ -19,17 +19,18 @@
                     </p>
                     <form action="/remove-from-cart" method="POST">
                         <input type="hidden" name="id" value="{{ person.id }}">
-                        <button type="submit">{{ person.name | split: " " | first}} Uit mijn winkelmandje </button>
+                        <button class="link beige" type="submit">{{ person.name | split: " " | first}} Uit mijn winkelmandje </button>
                     </form>
                 </li>
             {% endfor %}
         </ul>
     </section>
-
 </main>
 
 <aside class="cart">
+    <p>{{randomNumber}},-</p>
     <p>Totaal</p>
+    <a href="https://rickrolled.com" class="link beige checkout">checkout</a>
 </aside>
 
 {% else %}

@@ -64,11 +64,30 @@ let messages = ["test, test"];
 
 // home page
 app.get('/', async (request, response) => {
-  const persons = await fetchItems('person', {
+
+  const query = {
     'sort': getSortField(request.query.sort),
     'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1'
+  }
+
+  const allowedFilters = [
+    'residency', 'fav_animal', 'fav_fruit', 
+    'fav_music_genre', 'hair_color', 'fav_season'
+  ]
+
+  allowedFilters.forEach(field => {
+    if (request.query[field]) {
+
+      query[`filter[${field}][_icontains]`] = request.query[field]
+    }
   })
-  response.render('index.liquid', { persons })
+
+  const persons = await fetchItems('person', query)
+  
+  response.render('index.liquid', { 
+    persons, 
+    filters: request.query // Pass current filters back to the view to keep inputs filled
+  })
 })
 
 app.get('/bioscoop', async (request, response) => {

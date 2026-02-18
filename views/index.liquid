@@ -7,6 +7,27 @@
 {% include 'partials/cardlayout.liquid' %}
 
 <aside class="filter-desktop">
+    <form action="/" method="GET">
+        <fieldset>
+            <legend>Filter Students</legend>
+
+            <label for="residency">City</label>
+            <select name="residency" id="residency">
+                <option value="">All Cities</option>
+                <option value="Alkmaar">Alkmaar</option>
+                <option value="Amsterdam">Amsterdam</option>
+            </select>
+
+            <label for="fav_animal">Favorite Animal</label>
+            <input type="text" name="fav_animal" placeholder="e.g. Koala">
+
+            <label for="fav_color">Color (Hex)</label>
+            <input type="color" name="fav_color">
+
+            <button type="submit">Apply Filters</button>
+            <a href="/">Clear All</a>
+        </fieldset>
+    </form>
 </aside>
 
 </main>

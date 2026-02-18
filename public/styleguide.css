@@ -104,7 +104,8 @@ img, video {
 }
 
 /* general link white background dark text */
-a.link {
+a, button .link {
+    border: none;
     display: flex;
     align-items: center;
     justify-content: flex-start;

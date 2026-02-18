@@ -1,16 +1,16 @@
 
 @font-face {
-    font-family: Vesper-reg ;
+    font-family: Vesper-reg;
     src: url(/assets/regularfont.ttf);
 }
 
 @font-face {
-    font-family: Vesper-med ;
+    font-family: Vesper-med;
     src: url(/assets/mediumfont.ttf);
 }
 
 @font-face {
-    font-family: Vesper-bold ;
+    font-family: Vesper-bold;
     src: url(/assets/boldfont.ttf);
 }
     
@@ -113,7 +113,6 @@ a.link {
     margin-bottom: 1rem;
     padding-left: 1rem;
     width: 80%;
-    height: 2rem;
     max-width: 600px;
     min-width: 100px;
     border-radius: var(--border-small);
@@ -156,6 +155,9 @@ button.stoel {
     color: white;
     box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8);
     margin-block-end: -1.8rem;
-
     cursor: pointer;
+    
+    p {
+        font-size: 1rem;
+    }
 }

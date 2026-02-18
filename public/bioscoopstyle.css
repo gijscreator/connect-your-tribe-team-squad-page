@@ -2,8 +2,8 @@ body {
     background-color: var(--background-primary);
 }
 
-article {
-    section {
+section {
+    article {
         justify-self: center;
 
         &:nth-child(1) {

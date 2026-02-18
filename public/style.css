@@ -474,6 +474,11 @@ main.cart {
             min-width: 150px;
             width: 20%;
             height: auto;
+
+            @media (min-width: 789px) {
+                width: 30%;
+                height: auto;
+            }
         }
 
         ul {
@@ -494,6 +499,10 @@ main.cart {
             @media (min-width: 789px) {
                 flex-wrap: nowrap;
                 align-items: center;
+            }
+
+            h3 {
+                margin-left: 1rem
             }
 
             p {

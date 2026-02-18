@@ -104,18 +104,17 @@ img, video {
 }
 
 /* general link white background dark text */
-a, button .link {
+a,button.link {
     border: none;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     text-decoration: none;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    padding-left: 1rem;
-    width: 80%;
-    max-width: 600px;
-    min-width: 100px;
+    padding: 1rem;
+    margin: 1rem;
+    width: 15rem;
+    max-width: 37.5rem;
+    min-width: 1.5rem;
     border-radius: var(--border-small);
 
     &.beige {

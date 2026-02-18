@@ -3,15 +3,19 @@ body {
 }
 
 main {
-    margin: 5rem 0;
+    margin: 2rem 0;
 }
 
 section {
     article {
         justify-self: center;
         overflow: clip;
+        
 
         &:nth-child(1) {
+            width: 90vw;
+            height: 60dvh;
+            border-radius: .5rem;
             background-color: var(--secondary);
             display: grid;
             padding: 1em;

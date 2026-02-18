@@ -2,40 +2,46 @@
 <main>
     <article>
       <section>
-        <div>
-          <a href="/">terug</a>
-          <img
-            alt="foto van: persoon"
-          >
-          <p>naam:</p>
-          <p>leeftijd:</p>
-          <form>
-            <label>
-              rate deze film:
-              <input
-                type="range"
-                name="rate"
-                id="rate"
-                min="0.5"
-                max="5"
-                step="0.5"
-                value="2.5"
-                style="--val: 2.5"
-                oninput="this.style='--val:'+this.value"
-              >
-            </label>
-          </form>
-        </div>
-        <div>
-          <h1>favoriete film:</h1>
-          <img
-            src="/assets/20th_Century_Fox_logo_new.webp"
-            width="500"
-            height="250"
-            alt="gif van 20th centry fox intro"
-          >
-          <p>{{ person.movie }}</p>
-        </div>
+        {% for person in persons limit: 1 offset: 1 %}
+          {% include 'partials/calc.liquid' %}
+          <div>
+            <a href="/">terug</a>
+            <img
+              class="mugshot"
+              src="https://fdnd.directus.app/assets/{{ person.mugshot }}"
+              alt="foto van: persoon"
+            >
+            <p>naam: {{ person.name }}</p>
+
+            <p>leeftijd: {{ age }}</p>
+            <form>
+              <label>
+                rate deze film:
+                <input
+                  type="range"
+                  name="rate"
+                  id="rate"
+                  min="0.5"
+                  max="5"
+                  step="0.5"
+                  value="2.5"
+                  style="--val: 2.5"
+                  oninput="this.style='--val:'+this.value"
+                >
+              </label>
+            </form>
+          </div>
+          <div>
+            <h1>favoriete film:</h1>
+            <img
+              src="/assets/20th_Century_Fox_logo_new.webp"
+              width="500"
+              height="250"
+              alt="gif van 20th centry fox intro"
+            >
+            <p>{{ person.fav_movie }}</p>
+          </div>
+        {% endfor %}
       </section>
       <section>
         {% for person in persons %}

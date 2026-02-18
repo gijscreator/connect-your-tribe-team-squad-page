@@ -143,7 +143,7 @@ main {
 }
 
 /* Global main styles */
-main:not(.cart) {
+main:not(.bioscoop) {
     margin-top: 3dvh;
     padding: 1rem;
 
@@ -433,7 +433,7 @@ body.cart {
 }
 
 main.cart {
-
+    color: white;
     section {
 
         img {
@@ -485,7 +485,7 @@ aside.cart {
     display: flex;
     flex: 1;
     flex-direction: column;
-    background-color: purple;
+    background-color: var(--primary-cinema);
 }
 
 aside.filter-desktop {

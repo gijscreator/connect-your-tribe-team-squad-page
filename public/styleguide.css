@@ -142,7 +142,7 @@ a, button .link {
     }
 }
 
-button.stoel {
+a.stoel {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -98,6 +98,23 @@ app.get('/bioscoop', async (request, response) => {
   response.render('bioscoop.liquid', { persons })
 })
 
+app.get('/bioscoop/:id', async (request, response) => {
+  // 1. Fetch the specific person by ID
+  const person = await fetchItems(`person/${request.params.id}`);
+  
+  // 2. Fetch the full list of persons for your loop
+  const persons = await fetchItems('person', {
+    'sort': getSortField(request.query.sort),
+    'filter[squads][squad_id][tribe][name]': 'FDND Jaar 1'
+  });
+
+  // 3. Combine them into ONE object for the template
+  response.render('bioscoop.liquid', { 
+    person: person, 
+    persons: persons 
+  });
+});
+
 app.get('/styleguide', async (request, response) => {
   const persons = await fetchItems('person', {
     'sort': getSortField(request.query.sort),

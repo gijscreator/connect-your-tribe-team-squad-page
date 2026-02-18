@@ -1,9 +1,8 @@
 {% render 'partials/head.liquid', title: 'Squad page' %}
-<link rel="stylesheet" href="bioscoopstyle.css">
+<link rel="stylesheet" href="/bioscoopstyle.css">
 <main class="bioscoop">
   <section>
     <article>
-      {% for person in persons limit: 1 offset: 1 %}
         {% include 'partials/calc.liquid' %}
         <div>
           <a href="/">terug</a>
@@ -42,17 +41,15 @@
           >
           <p>{{ person.fav_movie }}</p>
         </div>
-      {% endfor %}
     </article>
-
-    <article>
-      {% for person in persons %}
-        <button class="stoel">
-          <p>{{ person.name | split: ' ' | first }}</p>
-          <p>{{ person.id }}</p>
-        </button>
-      {% endfor %}
-    </article>
+	<article>
+    {% for person in persons %}
+        <a href="/bioscoop/{{ person.id }}" class="stoel">
+            <p>{{ person.name | split: ' ' | first }}</p>
+            <p>{{ person.id }}</p>
+        </a>
+    {% endfor %}
+</article>
   </section>
 </main>
 {% render 'partials/foot.liquid', squads: squads %}

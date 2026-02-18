@@ -166,7 +166,7 @@ main:has(section.cardlayout):not(.search) {
     }
 
     &:has(aside.filter-desktop.open) {
-        flex-grow: 1; 
+        flex-grow: 1;
         transition: all 0.4s ease;
     }
 
@@ -235,8 +235,10 @@ main.student {
     background-position: -48.5rem -10rem;
 
     a {
+        width: fit-content;
         color: var(--button-bg-biege);
     }
+
 
     section:nth-of-type(2) {
 
@@ -408,6 +410,7 @@ main.search {
     display: flex;
     flex-direction: column;
     width: 100%;
+
     h2 {
         margin: 3rem 0;
     }
@@ -435,7 +438,7 @@ body.cart {
         min-width: 100vw;
 
         @media (min-width: 789px) {
-            flex: 1; 
+            flex: 1;
             min-width: 30vw;
         }
     }
@@ -443,7 +446,7 @@ body.cart {
     aside {
 
         @media (min-width: 789px) {
-            flex: 0 0 30vw; 
+            flex: 0 0 30vw;
         }
     }
 }
@@ -543,12 +546,12 @@ main.berichten {
 
 
 aside.filter-desktop {
-    display: none; 
+    display: none;
     width: 0;
     opacity: 0;
     overflow: hidden;
     transition: width 0.4s ease, opacity 0.3s ease;
-    background-color: var(--white); 
+    background-color: var(--white);
     flex-shrink: 0;
 
     @media (min-width: 789px) {
@@ -619,7 +622,7 @@ section.cardlayout {
 
         button {
             display: none;
-            
+
 
             @media (min-width: 789px) {
                 display: inline-block;
@@ -627,7 +630,7 @@ section.cardlayout {
         }
 
         details:nth-of-type(1) {
-            width: 20vw; 
+            width: 20vw;
             height: fit-content;
             background-color: white;
 
@@ -635,19 +638,15 @@ section.cardlayout {
                 display: none;
             }
 
-            &:open {
-
-            }
+            &:open {}
         }
 
         details:nth-of-type(2) {
-            width: 20vw; 
+            width: 20vw;
             height: fit-content;
             background-color: white;
 
-            &:open {
-
-            }
+            &:open {}
         }
     }
 
@@ -662,7 +661,7 @@ section.cardlayout {
         @container (min-width: 650px) {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-        
+
         @container (min-width: 1089px) {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }

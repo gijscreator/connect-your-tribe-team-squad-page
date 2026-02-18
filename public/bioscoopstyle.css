@@ -5,6 +5,7 @@ body {
 section {
     article {
         justify-self: center;
+        overflow: clip;
 
         &:nth-child(1) {
             background-color: var(--secondary);
@@ -98,19 +99,19 @@ section {
             padding-inline: 3vw;
 
             @media (min-width: 700px) {
-                grid-template-columns: repeat(6, 1fr);
+                grid-template-columns: repeat(4, 1fr);
             }
 
             @media (min-width: 800px) {
-                grid-template-columns: repeat(8, 1fr);
+                grid-template-columns: repeat(6, 1fr);
             }
 
             @media (min-width: 1200px) {
-                grid-template-columns: repeat(12, 1fr);
+                grid-template-columns: repeat(8, 1fr);
             }
 
             @media (min-width: 2000px) {
-                grid-template-columns: repeat(16, 1fr);
+                grid-template-columns: repeat(12, 1fr);
             }
         }
     }

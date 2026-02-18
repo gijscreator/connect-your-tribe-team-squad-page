@@ -44,7 +44,7 @@
 
         <form action="/add-to-cart" method="POST">
             <input type="hidden" name="id" value="{{ person.id }}">
-            <button type="submit">{{ person.name | split: " " | first}} In mijn winkelmandje </button>
+            <button type="submit" class="link beige">{{ person.name | split: " " | first}} In mijn winkelmandje </button>
         </form>
 
 

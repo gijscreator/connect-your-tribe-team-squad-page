@@ -809,7 +809,7 @@ section.individual {
     }
 }
 
-footer {
+footer:not(.bioscoop) {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;

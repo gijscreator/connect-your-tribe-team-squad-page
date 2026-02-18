@@ -2,6 +2,10 @@ body {
     background-color: var(--background-primary);
 }
 
+main {
+    margin: 5rem 0;
+}
+
 section {
     article {
         justify-self: center;

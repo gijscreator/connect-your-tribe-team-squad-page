@@ -1,13 +1,5 @@
-<!doctype html>
-<html lang="nl">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styleguide.css">
-    <link rel="stylesheet" href="/bioscoopstyle.css">
-    <title>Bioscoop</title>
-  </head>
-  <body>
+{% render 'partials/head.liquid', title: 'Squad page' %}
+<main>
     <article>
       <section>
         <div>
@@ -55,5 +47,5 @@
         {% endfor %}
       </section>
     </article>
-  </body>
-</html>
+</main>
+{% render 'partials/foot.liquid', squads: squads %}

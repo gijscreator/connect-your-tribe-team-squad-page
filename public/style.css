@@ -156,7 +156,7 @@ main:not(.cart) {
     }
 }
 
-main:has(section.cardlayout) {
+main:has(section.cardlayout):not(.search) {
     display: flex;
 
     @media (min-width: 700px) {
@@ -165,7 +165,7 @@ main:has(section.cardlayout) {
         padding: 1rem;
     }
 
-    &:has(aside.filter.open) {
+    &:has(aside.filter-desktop.open) {
         flex-grow: 1; 
         transition: all 0.4s ease;
     }
@@ -405,6 +405,9 @@ main.student {
 }
 
 main.search {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     h2 {
         margin: 3rem 0;
     }
@@ -485,14 +488,18 @@ aside.cart {
     background-color: purple;
 }
 
-aside.filter {
-    display: flex; 
+aside.filter-desktop {
+    display: none; 
     width: 0;
     opacity: 0;
     overflow: hidden;
     transition: width 0.4s ease, opacity 0.3s ease;
     background-color: var(--white); 
     flex-shrink: 0;
+
+    @media (min-width: 789px) {
+        display: flex;
+    }
 
     &.open {
         width: 250px;
@@ -552,14 +559,27 @@ section.cardlayout {
     container-type: inline-size;
     width: 100%;
 
-    article {
+    article.filters {
         display: flex;
         justify-content: space-around;
+
+        button {
+            display: none;
+            
+
+            @media (min-width: 789px) {
+                display: inline-block;
+            }
+        }
 
         details:nth-of-type(1) {
             width: 20vw; 
             height: fit-content;
             background-color: white;
+
+            @media (min-width: 789px) {
+                display: none;
+            }
 
             &:open {
 

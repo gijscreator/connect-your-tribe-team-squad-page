@@ -28,15 +28,17 @@ cards.forEach(card => {
         const x = event.clientX - rect.left;
         const y = event.clientY - rect.top;
 
-        // Set CSS variables for the spotlight position
         card.style.setProperty('--mouse-x', `${x}px`);
         card.style.setProperty('--mouse-y', `${y}px`);
     });
 });
 
-const filter = document.querySelector(".filter");
-const showfilters = document.querySelector(".filterbutton")
+const filterDesktop = document.querySelector(".filter-desktop");
+const filterMobile = document.querySelector(".filter-mobile");
+const showfilters = document.querySelector(".filterbutton");
 
 showfilters.addEventListener('click', () => {
-    filter.classList.toggle("open");
+    if (window.innerWidth > 789) {
+        filterDesktop.classList.toggle("open");
+    } 
 });

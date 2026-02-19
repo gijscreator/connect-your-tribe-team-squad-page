@@ -55,7 +55,6 @@ section {
                         font-size: var(--heading-medium);
                         border: none;
                         margin-block-start: 2rem;
-                        margin-block-end: 1rem;
 
                         label {
                             display: flex;
@@ -114,6 +113,7 @@ section {
                             input[type=text] {
                                 --size: clamp(3em, 4em, 10vw);
                                 width: calc(var(--size) * 5);
+                                padding: .5rem;
                             }
                         }
                     }

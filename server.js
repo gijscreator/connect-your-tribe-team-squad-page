@@ -90,6 +90,8 @@ app.get('/', async (request, response) => {
   })
 })
 
+let reviewArray = [];
+
 app.get('/bioscoop', async (request, response) => {
   const persons = await fetchItems('person', {
     'sort': getSortField(request.query.sort),
@@ -99,7 +101,6 @@ app.get('/bioscoop', async (request, response) => {
 })
 
 app.get('/bioscoop/:id', async (request, response) => {
-let reviewArray = [];
   // 1. Fetch the specific person by ID
   const person = await fetchItems(`person/${request.params.id}`);
   

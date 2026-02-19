@@ -61,27 +61,53 @@
 {% endif %}
 </section>
 
-
 <aside class="filter-desktop">
-    <form action="/" method="GET">
+    <form action="/" method="GET" id="filterForm">
         <fieldset>
             <legend>Filter Students</legend>
 
-            <label for="residency">City</label>
-            <select name="residency" id="residency">
+            <h3>City</h3>
+            <select name="residency" onchange="this.form.submit()">
                 <option value="">All Cities</option>
-                <option value="Alkmaar">Alkmaar</option>
-                <option value="Amsterdam">Amsterdam</option>
+                <option value="Alkmaar" {% if filters.residency == 'Alkmaar' %}selected{% endif %}>Alkmaar</option>
+                <option value="Amsterdam" {% if filters.residency == 'Amsterdam' %}selected{% endif %}>Amsterdam</option>
             </select>
 
-            <label for="fav_animal">Favorite Animal</label>
-            <input type="text" name="fav_animal" placeholder="e.g. Koala">
+            <h3>Favorite Animal</h3>
+            <select name="fav_animal" onchange="this.form.submit()">
+                <option value="">All Animals</option>
+                <option value="Aap" {% if filters.fav_animal == 'Aap' %}selected{% endif %}>Aap</option>
+                <option value="Hond" {% if filters.fav_animal == 'Hond' %}selected{% endif %}>Hond</option>
+                <option value="Kat" {% if filters.fav_animal == 'Kat' %}selected{% endif %}>Kat</option>
+                <option value="Koala" {% if filters.fav_animal == 'Koala' %}selected{% endif %}>Koala</option>
+                <option value="Panda" {% if filters.fav_animal == 'Panda' %}selected{% endif %}>Panda</option>
+            </select>
 
-            <label for="fav_color">Color (Hex)</label>
-            <input type="color" name="fav_color">
+            <h3>Favorite Fruit</h3>
+            <select name="fav_fruit" onchange="this.form.submit()">
+                <option value="">All Fruits</option>
+                <option value="Appel" {% if filters.fav_fruit == 'Appel' %}selected{% endif %}>Appel</option>
+                <option value="Banaan" {% if filters.fav_fruit == 'Banaan' %}selected{% endif %}>Banaan</option>
+                <option value="Peer" {% if filters.fav_fruit == 'Peer' %}selected{% endif %}>Peer</option>
+            </select>
 
-            <button type="submit">Apply Filters</button>
-            <a href="/">Clear All</a>
+            <h3>Season</h3>
+            <select name="fav_season" onchange="this.form.submit()">
+                <option value="">All Seasons</option>
+                <option value="Lente" {% if filters.fav_season == 'Lente' %}selected{% endif %}>Lente</option>
+                <option value="Zomer" {% if filters.fav_season == 'Zomer' %}selected{% endif %}>Zomer</option>
+                <option value="Herfst" {% if filters.fav_season == 'Herfst' %}selected{% endif %}>Herfst</option>
+                <option value="Winter" {% if filters.fav_season == 'Winter' %}selected{% endif %}>Winter</option>
+            </select>
+
+            <h3>Favorite Color</h3>
+            <input type="color" name="fav_color" 
+                value="{{ filters.fav_color | default: '#0061ff' }}" 
+                onchange="this.form.submit()">
+
+            <div class="filter-footer">
+                <a href="/" class="clear-all">Reset all filters</a>
+            </div>
         </fieldset>
     </form>
 </aside>

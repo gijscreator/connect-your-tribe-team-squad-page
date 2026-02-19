@@ -157,7 +157,16 @@ a.stoel {
     padding-inline: .5rem;
     margin-block-end: -3rem;
     cursor: pointer;
-    
+    text-decoration: none;
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition: .5s ease-out;
+    }
+
+    &:hover {
+        background-color: var(--button-bg-red);
+    }
+
     p {
         font-size: 1rem;
     }

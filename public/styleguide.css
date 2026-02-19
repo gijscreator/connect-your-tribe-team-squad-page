@@ -104,7 +104,7 @@ img, video {
 }
 
 /* general link white background dark text */
-a,button.link {
+a.link ,button.link {
     border: none;
     display: flex;
     align-items: center;

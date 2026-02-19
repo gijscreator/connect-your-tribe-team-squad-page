@@ -844,7 +844,6 @@ section.individual {
 
 footer:not(.bioscoop) {
     display: flex;
-    align-items: flex-start;
     justify-content: flex-start;
     background-color: var(--primary-cinema);
     box-shadow: var(--black) 0 1px 9px;
@@ -860,12 +859,29 @@ footer:not(.bioscoop) {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        width: 90%;
+        width: 100%;
     }
 
     a {
-        width: 90%;
         color: var(--white);
+        margin-left: 2rem;
+        animation-name: pulse;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.1
+    }
+
+    100% {
+        scale: 1;
     }
 }
 

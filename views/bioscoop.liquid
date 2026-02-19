@@ -51,7 +51,12 @@
         <p>{{ person.fav_movie }}</p>
         <p>reviews:</p>
 
-        {% for review in reviews %}
+        {% comment %} maak de person.id een string {% endcomment %}
+        {% assign person_id = person.id | append: '' %}
+        {% comment %} van alle reviews haal alle van de specifieke id {% endcomment %}
+        {% assign review_id = reviews | where: 'id', person_id %}
+        {% comment %} for loop zodat als je meerdere reviews hebt het apart wordt gezet {% endcomment %}
+        {% for review in review_id %}
           <p>Naam: {{ review.name }}</p>
           <p>{{ review.score }} sterren</p>
         {% endfor %}

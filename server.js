@@ -110,9 +110,10 @@ let reviewArray = [];
   });
 
   // 3. Combine them into ONE object for the template
-  response.render('bioscoop.liquid', { 
-    person: person, 
-    persons: persons 
+  response.render("bioscoop.liquid", {
+    person: person,
+    persons: persons,
+    reviews: reviewArray,
   });
 });
 

@@ -1,8 +1,11 @@
 {% render 'partials/head_cart.liquid', title: 'Squad page' %}
 
 {% if cart_items.size > 0 %}
+
 <main class="cart">
-    
+
+    {% assign cartTotal = 0 %}
+
     {% comment %} 
         Section with all persons in your cart
     {%  endcomment %}
@@ -11,25 +14,28 @@
         <ul>
             {% for person in cart_items %}
                 {% include 'partials/calc.liquid' %}
+                
+                {% assign cartTotal = cartTotal | plus: randomNumber %}
+
                 <li>
-                    <img src="https://fdnd.directus.app/assets/{{ person.mugshot }}"  width="400" height="300" alt="">
+                    <img src="https://fdnd.directus.app/assets/{{ person.mugshot }}" width="400" height="300" alt="">
                     <h3>{{ person.name }}</h3>     
-                    <p class="price"> {{randomNumber}},-
-                        <span>92,5</span>
-                    </p>
+                    <p class="price">{{ randomNumber }},-</p>
+                    
                     <form action="/remove-from-cart" method="POST">
                         <input type="hidden" name="id" value="{{ person.id }}">
-                        <button class="link beige" type="submit">{{ person.name | split: " " | first}} Uit mijn winkelmandje </button>
+                        <button class="link beige" type="submit">
+                            {{ person.name | split: " " | first }} Uit mijn winkelmandje 
+                        </button>
                     </form>
                 </li>
             {% endfor %}
         </ul>
     </section>
 </main>
-
+{% comment %} 4. The aside is already in the right place (after the loop) {% endcomment %}
 <aside class="cart">
-    <p>{{randomNumber}},-</p>
-    <p>Totaal</p>
+    <p>Totaal: {{ cartTotal }},-</p>
     <a href="https://rickrolled.com" class="link beige checkout">checkout</a>
 </aside>
 

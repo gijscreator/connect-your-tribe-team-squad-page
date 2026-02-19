@@ -99,6 +99,7 @@ app.get('/bioscoop', async (request, response) => {
 })
 
 app.get('/bioscoop/:id', async (request, response) => {
+let reviewArray = [];
   // 1. Fetch the specific person by ID
   const person = await fetchItems(`person/${request.params.id}`);
   
@@ -122,6 +123,14 @@ app.get('/styleguide', async (request, response) => {
   })
   response.render('styleguide.liquid', { persons })
 })
+app.post("/bioscoop", async (request, response) => {
+  const personId = request.body.id;
+
+  reviewArray.push(request.body.message);
+  // En stuur de browser terug naar /bioscooop, waar die een GET request uitvoert
+  // De browser komt hierdoor dus weer “terug” bij 2, waardoor de view opnieuw gerenderd wordt
+  response.redirect("/bioscoop/" + personId);
+});
 
 
 // add to cart post function

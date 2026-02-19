@@ -153,13 +153,17 @@
 </section>
 
 <section>
-<form action="//" method="POST">
+<form method="POST">
   <label>
-    Stel een vraag!
+    <h3>Stel een vraag!</h3>
     <textarea name="message"></textarea>
   </label>
-  <button type="submit">verzend</button>
+  <button type="submit" class="link">verzend</button>
 </form>
+
+{% for message in messages %}
+   <p>{{ message }}</p>
+{% endfor %}
 
 </section>
 

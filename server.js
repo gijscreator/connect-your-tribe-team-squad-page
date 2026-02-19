@@ -246,7 +246,6 @@ app.get('/search/:searchTerm', async (request, response) => {
 })
 
 app.get('/student/:id', async (request, response) => {
-  // Single items don't need the list filters, so we use fetch directly or a modified helper
   const person = await fetchItems(`person/${request.params.id}`)
   response.render('student.liquid', { person })
 })

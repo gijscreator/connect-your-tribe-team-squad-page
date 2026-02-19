@@ -237,6 +237,9 @@ main.student {
     a {
         width: fit-content;
         color: var(--button-bg-biege);
+        border-radius: var(--border-medium);
+        padding-left: var(--button-padding);
+        margin-left: 1.5rem;
     }
 
 

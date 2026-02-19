@@ -569,11 +569,45 @@ main.berichten {
 aside.filter-desktop {
     display: none;
     width: 0;
+    height: fit-content;
     opacity: 0;
     overflow: hidden;
     transition: width 0.4s ease, opacity 0.3s ease;
-    background-color: var(--white);
+    background-color: var(--button-bg-biege);
+    border-radius: var(--border-medium);
+    border: solid 2px var(--primary-cinema);
+    padding: var(--button-padding);
+    margin-left: var(--reg-margin);
     flex-shrink: 0;
+
+    fieldset {
+        border: none;
+
+        legend {
+            font-size: var(--heading-small);
+            margin-left: 2rem;
+            font-family: Vesper-bold;
+        }
+
+        h3 {
+            font-size: var(--heading-small)
+        }
+
+        select {
+            border-radius: var(--border-medium);
+            border: solid 1.5px var(--primary-cinema);
+            margin-bottom: var(--reg-margin)
+        }
+
+        input {
+            border: solid 1.5px var(--primary-cinema);
+        }
+
+        a {
+            color: var(--primary-cinema);
+            text-decoration: underline;
+        }
+    }
 
     @media (min-width: 789px) {
         display: flex;

@@ -36,9 +36,6 @@
               vul hier je naam in:
               <input type="text" name="name" id="name" placeholder="pietje">
             </label>
-            <label>
-              <textarea></textarea>
-            </label>
           </fieldset>
           <button>verzenden</button>
         </form>
@@ -53,7 +50,9 @@
         >
         <p>{{ person.fav_movie }}</p>
         <p>reviews:</p>
-        <p>{{ reviews.score }} sterren</p>
+
+        <p>Naam: {{ reviews }}</p>
+        <p>{{ reviews }} sterren</p>
       </div>
     </article>
     <article>

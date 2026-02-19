@@ -16,10 +16,10 @@
         <p>leeftijd: {{ age }}</p>
         <form method="post" action="/bioscoop">
           <fieldset>
-            <legend>Review deze film:</legend>
+            <legend>Review de favoriete film van {{ person.name | split: ' ' | first }}</legend>
             <input type="hidden" value="{{ person.id }}" name="id">
             <label>
-              welke score geef je deze film
+              sleep je score
               <input
                 type="range"
                 name="score"
@@ -34,7 +34,7 @@
             </label>
             <label>
               vul hier je naam in:
-              <input type="text" name="name" id="name" placeholder="pietje">
+              <input type="text" name="name" id="name" placeholder="Krijn">
             </label>
           </fieldset>
           <button>verzenden</button>
@@ -48,7 +48,7 @@
           height="250"
           alt="foto van 20th centry fox intro"
         >
-        <p>{{ person.fav_movie }}</p>
+        <p class="fav_movie">{{ person.fav_movie }}</p>
         <p>reviews:</p>
 
         {% comment %} maak de person.id een string {% endcomment %}

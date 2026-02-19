@@ -10,11 +10,14 @@ section {
     article {
         justify-self: center;
         overflow: clip;
-        
+
+        .fav_movie {
+            margin-block-end: 2rem;
+        }
 
         &:nth-child(1) {
             width: 90vw;
-            height: 60dvh;
+            height: clamp(60dvh, auto, 80dvh);
             border-radius: .5rem;
             background-color: var(--secondary);
             display: grid;
@@ -47,55 +50,96 @@ section {
                 }
 
                 form {
-                    label {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 1em;
-                        font-size: var(--paragraph);
 
-                        input {
-                            --size: clamp(3em, 4em, 10vw);
-                            --mask: conic-gradient(from -18deg at 61% 34.5%, #0000 108deg, #000 0) 0 / var(--size),
-                                conic-gradient(from 270deg at 39% 34.5%, #0000 108deg, #000 0) 0 / var(--size),
-                                conic-gradient(from 54deg at 68% 56%, #0000 108deg, #000 0) 0 / var(--size),
-                                conic-gradient(from 198deg at 32% 56%, #0000 108deg, #000 0) 0 / var(--size),
-                                conic-gradient(from 126deg at 50% 69%, #0000 108deg, #000 0) 0 / var(--size);
-                            --bg: linear-gradient(90deg, #946F18 calc(var(--size) * var(--val)), #000 0);
-                            height: var(--size);
-                            width: calc(var(--size) * 5);
-                            border: 0;
-                            /* Firefox adds a default border to ranges */
-                            -webkit-appearance: none;
-                            appearance: none;
+                    fieldset {
+                        font-size: var(--heading-medium);
+                        border: none;
+                        margin-block-start: 2rem;
+                        margin-block-end: 1rem;
 
-                            /* Chrome and Safari */
-                            &::-webkit-slider-runnable-track {
-                                height: 100%;
-                                mask: var(--mask);
-                                mask-composite: intersect;
-                                background: var(--bg);
-                                -webkit-print-color-adjust: exact;
-                                print-color-adjust: exact;
+                        label {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 1em;
+                            font-size: var(--paragraph);
+                            margin-block-end: 2rem;
+
+                            input {
+                                font-size: var(--paragraph);
                             }
 
-                            &::-webkit-slider-thumb {
-                                opacity: 0;
+                            input[type=range] {
+                                --size: clamp(3em, 4em, 10vw);
+                                --mask: conic-gradient(from -18deg at 61% 34.5%, #0000 108deg, #000 0) 0 / var(--size),
+                                    conic-gradient(from 270deg at 39% 34.5%, #0000 108deg, #000 0) 0 / var(--size),
+                                    conic-gradient(from 54deg at 68% 56%, #0000 108deg, #000 0) 0 / var(--size),
+                                    conic-gradient(from 198deg at 32% 56%, #0000 108deg, #000 0) 0 / var(--size),
+                                    conic-gradient(from 126deg at 50% 69%, #0000 108deg, #000 0) 0 / var(--size);
+                                --bg: linear-gradient(90deg, #946F18 calc(var(--size) * var(--val)), #000 0);
+                                height: var(--size);
+                                width: calc(var(--size) * 5);
+                                border: 0;
+                                /* Firefox adds a default border to ranges */
+                                -webkit-appearance: none;
+                                appearance: none;
+
+                                /* Chrome and Safari */
+                                &::-webkit-slider-runnable-track {
+                                    height: 100%;
+                                    mask: var(--mask);
+                                    mask-composite: intersect;
+                                    background: var(--bg);
+                                    -webkit-print-color-adjust: exact;
+                                    print-color-adjust: exact;
+                                }
+
+                                &::-webkit-slider-thumb {
+                                    opacity: 0;
+                                }
+
+                                /* Firefox */
+                                &::-moz-range-track {
+                                    height: 100%;
+                                    mask: var(--mask);
+                                    mask-composite: intersect;
+                                    background: var(--bg);
+                                    print-color-adjust: exact;
+                                }
+
+                                &::-moz-range-thumb {
+                                    opacity: 0;
+                                }
                             }
 
-                            /* Firefox */
-                            &::-moz-range-track {
-                                height: 100%;
-                                mask: var(--mask);
-                                mask-composite: intersect;
-                                background: var(--bg);
-                                print-color-adjust: exact;
-                            }
-
-                            &::-moz-range-thumb {
-                                opacity: 0;
+                            input[type=text] {
+                                --size: clamp(3em, 4em, 10vw);
+                                width: calc(var(--size) * 5);
                             }
                         }
                     }
+
+                    button {
+                        text-decoration: none;
+                        margin-bottom: 1rem;
+                        padding: .5rem;
+                        border-radius: 2px;
+                        border: solid #946F18;
+                        background-color: var(--button-bg-brown);
+                        color: var(--white);
+                        cursor: pointer;
+                        font-size: var(--paragraph);
+
+                        @media (prefers-reduced-motion: no-preference) {
+                            transition: .5s ease-out;
+
+                        }
+
+                        &:hover {
+                            background-color: var(--button-bg-red);
+                            border-color: var(--button-text);
+                        }
+                    }
+
                 }
             }
         }

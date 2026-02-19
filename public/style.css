@@ -404,6 +404,18 @@ main.student {
         height: 100dvh;
     }
 
+    section:nth-of-type(6) {
+
+        textarea {
+            width: 60%;
+            font-size: large;
+        }
+
+        button {
+
+        }
+    }
+
 }
 
 main.search {
@@ -769,6 +781,7 @@ section.individual {
             background-color: var(--primary-cinema);
             width: 90%;
             border: solid var(--button-bg-biege) 1px;
+            color: var(--button-bg-offwhite);
             text-decoration: underline;
 
             &:hover {

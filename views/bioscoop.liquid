@@ -51,8 +51,10 @@
         <p>{{ person.fav_movie }}</p>
         <p>reviews:</p>
 
-        <p>Naam: {{ reviews }}</p>
-        <p>{{ reviews }} sterren</p>
+        {% for review in reviews %}
+          <p>Naam: {{ review.name }}</p>
+          <p>{{ review.score }} sterren</p>
+        {% endfor %}
       </div>
     </article>
     <article>

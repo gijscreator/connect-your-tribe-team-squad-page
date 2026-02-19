@@ -126,8 +126,12 @@ app.get('/styleguide', async (request, response) => {
 app.post("/bioscoop", async (request, response) => {
   const personId = request.body.id;
 
-  reviewArray.push(request.body.message);
-  reviewArray.push(request.body.id, request.body.score, request.body.name);
+  // push de gegevens van de form in een object naar de array
+  reviewArray.push({
+    id: request.body.id,
+    score: request.body.score,
+    name: request.body.name,
+  });
   // En stuur de browser terug naar /bioscooop, waar die een GET request uitvoert
   // De browser komt hierdoor dus weer “terug” bij 2, waardoor de view opnieuw gerenderd wordt
   response.redirect("/bioscoop/" + personId);

@@ -6,6 +6,8 @@ Ontwerp en maak samen met je team een website met NodeJS, Express, JSON en Liqui
 
 We als team happy moeten een website maken met een api, liquid en directus.
 
+Team happy bestaat uit: Caitlin, Gijs en Rowan
+
 ## beschrijving:
 
 De website ziet er uit als een film winkelpagina waar je beide squads kan zien ook kan je filteren.

@@ -23,17 +23,27 @@ Je kan onder de persoon in het film scherm een review achter laten over de favor
 ## kenmerken:
 liquid:
 filters
+https://github.com/gijscreator/connect-your-tribe-team-squad-page/blob/72f4fdc88d2f83f7d21b0dff9779f331d008ac44/views/bioscoop.liquid#L14
+
 for loops
+https://github.com/gijscreator/connect-your-tribe-team-squad-page/blob/72f4fdc88d2f83f7d21b0dff9779f331d008ac44/views/bioscoop.liquid#L59-L62
+
 if
+https://github.com/gijscreator/connect-your-tribe-team-squad-page/blob/72f4fdc88d2f83f7d21b0dff9779f331d008ac44/views/search.liquid#L8-L10
+
 
 directus:
-routing
+routing met get en post:
+https://github.com/gijscreator/connect-your-tribe-team-squad-page/blob/72f4fdc88d2f83f7d21b0dff9779f331d008ac44/server.js#L103-L119
+https://github.com/gijscreator/connect-your-tribe-team-squad-page/blob/72f4fdc88d2f83f7d21b0dff9779f331d008ac44/server.js#L128-L140
 
 css:
 clamp
+https://github.com/gijscreator/connect-your-tribe-team-squad-page/blob/72f4fdc88d2f83f7d21b0dff9779f331d008ac44/public/bioscoopstyle.css#L20
 
 js:
 array
+https://github.com/gijscreator/connect-your-tribe-team-squad-page/blob/72f4fdc88d2f83f7d21b0dff9779f331d008ac44/server.js#L93
 
 
 ## installatie:

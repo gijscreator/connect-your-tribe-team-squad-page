@@ -609,6 +609,7 @@ aside.filter-desktop {
         a {
             color: var(--primary-cinema);
             text-decoration: underline;
+            margin-left: 2.5rem;
         }
     }
 
